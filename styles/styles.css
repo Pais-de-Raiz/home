@@ -1,0 +1,130 @@
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color:#FFFFFF !important;
+    box-shadow: 5px 5px 10px 2px rgba(142,182,170,.1);
+}
+
+.nav-link {
+    color: #486656;
+    font-size: 18px;
+    margin: auto 0px;
+}
+
+.nav-link:hover {
+    color:#98C79B;
+}
+
+.btn-outline-secondary {
+    --bs-btn-font-weight: 700;
+    --bs-btn-color:#486656;
+    --bs-btn-border-color:#486656;
+    --bs-btn-bg: #FBBB52;
+    --bs-btn-hover-bg: #98C79B;
+    --bs-btn-hover-color:#ffffff;
+    --bs-btn-hover-border-color:#486656;
+    padding: 10px 40px;
+    border-radius: 30px;
+    border: 2px solid;
+}
+
+.btn-sm {
+    --bs-btn-padding-x: 1.5rem;
+}
+
+.navbar-toggler{
+    --bs-navbar-toggler-border-color:#98C79B;
+    border: 2px solid;
+}
+
+.navbar-toggler-icon {
+    background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(152, 199, 155,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar ul{
+    padding-inline-start: 80px;
+}
+
+.navbar li{
+    padding-inline-start: 20px;
+    font-size: 14px;
+}
+
+.btn-outline-secondary {
+    margin-left: 20px;
+}
+
+.text-body-secondary{
+    color: rgb(135, 135, 135) !important;
+}
+
+/* Estilos para el footer */
+.footer{
+    background-color:#486656 !important;
+    padding:0px 100px;
+}
+
+.footer a{
+    font-size: 16px;
+    color:#FEF9E2 !important;
+}
+
+.footer p{
+    font-size: 16px;
+    color:#FEF9E2 !important;
+}
+
+.footer p{
+    font-size: 14px;
+}
+
+.footer button{
+    font-size: 14px;
+}
+
+.fa-brands {
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+.circle-background {
+    display: inline-block;
+    background-color: #B6DFB9; /* Cambia el color de fondo del círculo según tus necesidades */
+    padding: 7px; /* Ajusta el espaciado interno del círculo según tus necesidades */
+    border-radius: 50%; /* Hace que el contenedor tenga bordes redondeados para formar un círculo */
+    margin-left:0px;
+    margin-right: 5px;
+}
+  
+.circle-background i {
+    margin: 0; /* Elimina el margen predeterminado del icono para que se ajuste completamente al círculo */
+}
+
+.circle-background:hover {
+    background-color: rgba(54, 54, 54,0.8); /* Cambia el color de fondo del círculo según tus necesidades */
+}
+
+
+.detail {
+    border: #717171 1px solid;
+    border-radius: 5px;
+    width: 300px;
+    padding: 5px 0px 5px 0px;
+    margin: auto;
+    background-color: #292929;
+}
+
+/* Estilos iconos */
+.icon-watch{
+        color: #ffffff;
+}
+
+    
+.icon-watch:hover{
+        color: #282828;
+}
