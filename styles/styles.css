@@ -78,12 +78,61 @@ body {
     color:#FEF9E2 !important;
 }
 
+.footer h5{
+    font-weight:700;
+    font-size: 20px;
+    color:#FEF9E2 !important;
+}
+
+.footer li{
+    font-size: 16px;
+    color:#FEF9E2 !important;
+}
+
 .footer p{
     font-size: 14px;
 }
 
 .footer button{
     font-size: 14px;
+}
+
+.footer input{
+    background-color: #486656 ;
+    border: 1px #FEF9E2 solid;
+    border-radius: 0px;
+}
+
+.footer input:focus {
+    background-color: #486656 ;
+    border: 1px #FEF9E2 solid;
+    border-radius: 0px;
+    color: #FEF9E2 ;
+    box-shadow:none;
+}
+
+.footer input::placeholder{
+    color: #FEF9E2;
+}
+
+.form-control{
+    color: #FEF9E2;
+}
+
+.footer button {
+    background-color:#FEF9E2;
+    color: #486656;
+    border-radius: 0px;
+    box-shadow:none;
+    border: none;
+}
+
+.footer button:hover {
+    background-color:#98C79B;
+    color: #486656;
+    border-radius: 0px;
+    box-shadow:none;
+    border: none;
 }
 
 .fa-brands {
