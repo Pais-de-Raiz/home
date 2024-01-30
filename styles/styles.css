@@ -10,9 +10,16 @@ h1 {
     margin: 20px auto;
 }
 
-h5 {
+p {
+    font-size: 18px;
     color: #7b7a7a;
     margin: 20px 0px;
+}
+
+h6 {
+    color:#98C79B;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 /* Estilos para la barra de navegación */
@@ -203,5 +210,66 @@ h5 {
         color: #282828;
 }
 
-
-
+/* Estilos carousel */
+  .slider2 {
+    background: white;
+    /* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);  */
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: auto;
+  }
+  
+  .slider2::before,
+  .slider2::after {
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+  
+  .slider2::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+  
+  .slider2::before {
+    left: 0;
+    top: 0;
+  }
+  
+  .slider2 .slide-track2 {
+    -webkit-animation: scroll 20s linear infinite;
+    animation: scroll 20s linear infinite;
+    display: flex;
+    width: fit-content;
+  }
+  
+  .slider2 .slide2 {
+    height: 100px;
+    width: 250px;
+    display: flex;
+  }
+  
+  @-webkit-keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* scroll only 50% */
+      transform: translateX(-50%);
+    }
+  }

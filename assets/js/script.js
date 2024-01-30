@@ -72,4 +72,51 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 });
 
-
+// Animación Carousel
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('carousel');
+    let currentSlide = 1;
+  
+    // Función para mover el carrusel a la izquierda
+    function moveLeft() {
+      if (currentSlide > 1) {
+        currentSlide--;
+      } else {
+        currentSlide = carousel.children.length - 2;
+        // Transición instantánea para el salto de la última a la primera imagen
+        carousel.style.transition = 'none';
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        // Forzar la reflow para aplicar el cambio instantáneo
+        carousel.offsetHeight;
+        // Restaurar la transición después de la reflow
+        carousel.style.transition = 'transform 0.5s ease-in-out';
+      }
+      updateTransform();
+    }
+  
+    // Función para mover el carrusel a la derecha
+    function moveRight() {
+      if (currentSlide < carousel.children.length - 2) {
+        currentSlide++;
+      } else {
+        currentSlide = 1;
+        // Transición instantánea para el salto de la primera a la última imagen
+        carousel.style.transition = 'none';
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        // Forzar la reflow para aplicar el cambio instantáneo
+        carousel.offsetHeight;
+        // Restaurar la transición después de la reflow
+        carousel.style.transition = 'transform 0.5s ease-in-out';
+      }
+      updateTransform();
+    }
+  
+    // Función para actualizar la transformación del carrusel
+    function updateTransform() {
+      carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+  
+    // Configurar intervalo para el movimiento automático
+    setInterval(moveRight, 2000); // Cambia 2000 por el tiempo en milisegundos que desees
+  });
+  
