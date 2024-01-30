@@ -6,10 +6,13 @@ body {
 
 h1 {
     color: #486656;
+    font-weight: 600;
+    margin: 20px auto;
 }
 
 h5 {
     color: #7b7a7a;
+    margin: 20px 0px;
 }
 
 /* Estilos para la barra de navegación */
