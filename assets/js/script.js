@@ -35,22 +35,41 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Cargar el contenido del footer.html en la sección con id "footer"
-    var propContainer = document.getElementById('prop');
+    // Cargar el contenido del slider.html en la sección con id "slider"
+    var sliderContainer = document.getElementById('slider');
     var xhr = new XMLHttpRequest();
     
     xhr.onreadystatechange = function () {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                propContainer.innerHTML = xhr.responseText;
+                sliderContainer.innerHTML = xhr.responseText;
             } else {
-                console.error('Error al cargar el prop-value ' + xhr.status);
+                console.error('Error al cargar el slider: ' + xhr.status);
             }
         }
     };
-    xhr.open('GET', 'assets/partials/prop.html', true);
+    xhr.open('GET', 'assets/partials/slider.html', true);
     xhr.send();
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Cargar el contenido del filosofia.html en la sección con id "filosofia"
+    var filosofiaContainer = document.getElementById('filosofia');
+    var xhr = new XMLHttpRequest();
+    
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                filosofiaContainer.innerHTML = xhr.responseText;
+            } else {
+                console.error('Error al cargar filosofia: ' + xhr.status);
+            }
+        }
+    };
+    xhr.open('GET', 'assets/partials/filosofia.html', true);
+    xhr.send();
+});
+
 
 // Espera a que el DOM esté cargado
 document.addEventListener("DOMContentLoaded", function () {
@@ -72,51 +91,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 });
 
-// Animación Carousel
-document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.getElementById('carousel');
-    let currentSlide = 1;
-  
-    // Función para mover el carrusel a la izquierda
-    function moveLeft() {
-      if (currentSlide > 1) {
-        currentSlide--;
-      } else {
-        currentSlide = carousel.children.length - 2;
-        // Transición instantánea para el salto de la última a la primera imagen
-        carousel.style.transition = 'none';
-        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-        // Forzar la reflow para aplicar el cambio instantáneo
-        carousel.offsetHeight;
-        // Restaurar la transición después de la reflow
-        carousel.style.transition = 'transform 0.5s ease-in-out';
-      }
-      updateTransform();
-    }
-  
-    // Función para mover el carrusel a la derecha
-    function moveRight() {
-      if (currentSlide < carousel.children.length - 2) {
-        currentSlide++;
-      } else {
-        currentSlide = 1;
-        // Transición instantánea para el salto de la primera a la última imagen
-        carousel.style.transition = 'none';
-        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-        // Forzar la reflow para aplicar el cambio instantáneo
-        carousel.offsetHeight;
-        // Restaurar la transición después de la reflow
-        carousel.style.transition = 'transform 0.5s ease-in-out';
-      }
-      updateTransform();
-    }
-  
-    // Función para actualizar la transformación del carrusel
-    function updateTransform() {
-      carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-  
-    // Configurar intervalo para el movimiento automático
-    setInterval(moveRight, 2000); // Cambia 2000 por el tiempo en milisegundos que desees
-  });
-  
