@@ -70,6 +70,23 @@ document.addEventListener('DOMContentLoaded', function () {
     xhr.send();
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Cargar el contenido del do.html en la sección con id "do"
+    var doContainer = document.getElementById('do');
+    var xhr = new XMLHttpRequest();
+    
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                doContainer.innerHTML = xhr.responseText;
+            } else {
+                console.error('Error al cargar do: ' + xhr.status);
+            }
+        }
+    };
+    xhr.open('GET', 'assets/partials/do.html', true);
+    xhr.send();
+});
 
 // Espera a que el DOM esté cargado
 document.addEventListener("DOMContentLoaded", function () {

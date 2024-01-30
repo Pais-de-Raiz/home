@@ -12,7 +12,7 @@ h1 {
 
 p {
     font-size: 18px;
-    color: #7b7a7a;
+    color: #343434;
     margin: 20px 0px;
 }
 
@@ -20,6 +20,10 @@ h6 {
     color:#98C79B;
     letter-spacing: 1px;
     font-weight:900;
+}
+
+h4 {
+    color: white;
 }
 
 /* Estilos para la barra de navegación */
@@ -311,7 +315,8 @@ h6 {
   
   .imagen-container-3:hover {
     background-image: url('../img/filosofia-detalle-3-3.png'); /* URL de la imagen al hacer hover */
-  }
+}
+
   
   
   
