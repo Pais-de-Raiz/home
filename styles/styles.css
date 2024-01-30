@@ -1,5 +1,15 @@
+
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+
+h1 {
+    color: #486656;
+}
+
+h5 {
+    color: #7b7a7a;
 }
 
 /* Estilos para la barra de navegación */
@@ -23,6 +33,19 @@ body {
     --bs-btn-color:#486656;
     --bs-btn-border-color:#486656;
     --bs-btn-bg: #FBBB52;
+    --bs-btn-hover-bg: #98C79B;
+    --bs-btn-hover-color:#ffffff;
+    --bs-btn-hover-border-color:#486656;
+    padding: 10px 40px;
+    border-radius: 30px;
+    border: 2px solid;
+}
+
+.btn-success {
+    --bs-btn-font-weight: 700;
+    --bs-btn-color:#486656;
+    --bs-btn-border-color:#486656;
+    --bs-btn-bg: #FFE3B5;
     --bs-btn-hover-bg: #98C79B;
     --bs-btn-hover-color:#ffffff;
     --bs-btn-hover-border-color:#486656;
@@ -65,7 +88,6 @@ body {
 /* Estilos para el footer */
 .footer{
     background-color:#486656 !important;
-    padding:0px 100px;
 }
 
 .footer a{
@@ -177,3 +199,6 @@ body {
 .icon-watch:hover{
         color: #282828;
 }
+
+
+
