@@ -88,6 +88,24 @@ document.addEventListener('DOMContentLoaded', function () {
     xhr.send();
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Cargar el contenido del quotes.html en la sección con id "quotes"
+    var quotesContainer = document.getElementById('quotes');
+    var xhr = new XMLHttpRequest();
+    
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                quotesContainer.innerHTML = xhr.responseText;
+            } else {
+                console.error('Error al cargar quotes: ' + xhr.status);
+            }
+        }
+    };
+    xhr.open('GET', 'assets/partials/quotes.html', true);
+    xhr.send();
+});
+
 // Espera a que el DOM esté cargado
 document.addEventListener("DOMContentLoaded", function () {
         // Obtén el contenedor de animación dentro de la sección

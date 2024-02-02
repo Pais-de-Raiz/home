@@ -317,6 +317,37 @@ h4 {
     background-image: url('../img/filosofia-detalle-3-3.png'); /* URL de la imagen al hacer hover */
 }
 
+.card {
+    border-radius: 20px;
+    width: 36rem;
+}
+
+/*Estilos quotes section */
+.quote-img2 {
+    margin-left:-300px;
+    margin-top: -212px;
+    position:absolute;
+}
+
+.quote img {
+    margin: 30px 0px 0px 20px;
+}
+
+@media (max-width: 1200px) {
+    .quote-img2 {
+        margin-left:-500px;
+        margin-top: -220px;
+        position:absolute;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+    
+}
   
   
   
@@ -336,4 +367,17 @@ h4 {
         height: 83px; /* Ajusta la altura según sea necesario */
     }
 
-  }
+    .card p{
+        font-size: 14px;
+    }
+
+    .card h5{
+        font-size: 18px;
+    }
+
+    .quote img {
+        margin: 0px 0px 0px 0px;
+    }
+
+}
+
