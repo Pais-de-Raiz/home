@@ -333,6 +333,18 @@ h4 {
     margin: 30px 0px 0px 20px;
 }
 
+.tittle {
+    background-image: url("../img/tittle-texture.png");
+    background-color:#8EB6AA;
+    margin: 0px;
+    padding: 50px 0px;
+    border-radius: 0px 0px 50px 50px;
+    background-size: repeat;
+    background-position: center;
+}
+
+
+
 @media (max-width: 1200px) {
     .quote-img2 {
         margin-left:-500px;

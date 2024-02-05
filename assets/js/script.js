@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Cargar el contenido del head.html en la sección con id "head"
+    var headContainer = document.getElementById('head');
+    var xhr = new XMLHttpRequest();
+    
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                headContainer.innerHTML = xhr.responseText;
+            } else {
+                console.error('Error al cargar head: ' + xhr.status);
+            }
+        }
+    };
+    xhr.open('GET', 'assets/partials/head.html', true);
+    xhr.send();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
     // Cargar el contenido del footer.html en la sección con id "footer"
     var navbarContainer = document.getElementById('navbar');
     var xhr = new XMLHttpRequest();
@@ -121,6 +139,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
     xhr.open('GET', 'assets/partials/services.html', true);
+    xhr.send();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Cargar el contenido del comunidades.html en la sección con id "comunidades"
+    var comunidadesContainer = document.getElementById('comunidades');
+    var xhr = new XMLHttpRequest();
+    
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                comunidadesContainer.innerHTML = xhr.responseText;
+            } else {
+                console.error('Error al cargar comunidades: ' + xhr.status);
+            }
+        }
+    };
+    xhr.open('GET', 'assets/partials/comunidades.html', true);
     xhr.send();
 });
 
