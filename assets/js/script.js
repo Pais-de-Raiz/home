@@ -160,23 +160,4 @@ document.addEventListener('DOMContentLoaded', function () {
     xhr.send();
 });
 
-// Espera a que el DOM esté cargado
-document.addEventListener("DOMContentLoaded", function () {
-        // Obtén el contenedor de animación dentro de la sección
-        var animationContainer = document.getElementById("animation-container");
-
-        // Verifica si el contenedor existe antes de inicializar la animación
-        if (animationContainer) {
-            // Configura la animación
-            var animation = bodymovin.loadAnimation({
-                container: animationContainer,
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                path: 'img/animation.json' // Reemplaza con la ruta correcta de tu archivo JSON
-            });
-        } else {
-            console.error("No se encontró el contenedor de animación en la sección.");
-        }
-});
 

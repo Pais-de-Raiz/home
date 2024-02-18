@@ -360,6 +360,16 @@ h4 {
     }
     
 }
+
+.video-container {
+    position: relative;
+    max-width: 100%;
+}
+
+#videoPlayer {
+    width: 100%;
+    height: auto;
+}
   
   
   
