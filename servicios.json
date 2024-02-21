@@ -1,0 +1,46 @@
+[
+    {
+        "card": {
+            "imgSrc": "https://radius-global.com/wp-content/uploads/2021/09/WORKSHOP-PGVTWPK-650-375.jpg",
+            "imgAlt": "talleres presneciales",
+            "title": "Card Title 1",
+            "text": "Some quick example text for Card 1.",
+            "btnText": "Go somewhere",
+            "btnLink": "#"
+        }
+    },
+    {
+        "card": {
+            "imgSrc": "img/card-img2.png",
+            "imgAlt": "Card Image 2",
+            "title": "Card Title 2",
+            "text": "Some quick example text for Card 2.",
+            "btnText": "Go somewhere else",
+            "btnLink": "#"
+        }
+        
+    },
+    {
+        "card": {
+            "imgSrc": "img/card-img2.png",
+            "imgAlt": "Card Image 2",
+            "title": "Card Title 2",
+            "text": "Some quick example text for Card 2.",
+            "btnText": "Go somewhere else",
+            "btnLink": "#"
+        }
+        
+    },
+    {
+        "card": {
+            "imgSrc": "img/card-img2.png",
+            "imgAlt": "Card Image 2",
+            "title": "Card Title 2",
+            "text": "Some quick example text for Card 2.",
+            "btnText": "Go somewhere else",
+            "btnLink": "#"
+        }
+        
+    }
+    
+]
