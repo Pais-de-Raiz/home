@@ -179,6 +179,7 @@ fetch('servicios.json')
             cardImg.className = 'card-img-top';
             cardImg.src = item.card.imgSrc;
             cardImg.alt = item.card.imgAlt;
+            cardImg.style.borderRadius = '20px 20px 0px 0px'
             //estilo
             card.style.width = '18rem';
             card.style.margin = '10px auto';
@@ -232,6 +233,7 @@ fetch('servicios.json')
                 cardImg.className = 'card-img-top';
                 cardImg.src = item.card.imgSrc;
                 cardImg.alt = item.card.imgAlt;
+                cardImg.style.borderRadius = '20px 20px 0px 0px'
                 //estilo
                 card.style.width = '18rem';
                 card.style.margin = '10px auto';
