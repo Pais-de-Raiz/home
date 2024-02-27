@@ -181,7 +181,8 @@ fetch('servicios.json')
             cardImg.alt = item.card.imgAlt;
             cardImg.style.borderRadius = '20px 20px 0px 0px'
             //estilo
-            card.style.width = '18rem';
+            card.style.width = '19rem';
+            card.style.height = '35rem';
             card.style.margin = '10px auto';
 
             var cardBody = document.createElement('div');
