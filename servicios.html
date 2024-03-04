@@ -20,21 +20,62 @@
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="container-xxl text-center">
-          <hr style="border: 1px solid #98C79B;">
-          <h6>EXPERIENCIAS DE BIENESTAR Y EMPREDIMIENTO</h6>
-          <p style="margin: 0px auto;max-width: 800px;">Ofrecemos experiencias de alto impacto, que permiten llevar bienestar a los trabajadores de las empresas por medio de programas y talleres basados en propósito, liderazgo y emprendimiento.</p>
-          <br>
-        </div>
-
+    <section>
         <div class="container-fluid">
             <div class="container-xxl">
-              <div id="servicios-container" class="row d-flex justify-content-center">
-  
+                <div class="container-xxl text-center">
+                    <div class="btn-group d-md-inline">
+                        <!-- Para tamaños de pantalla mayores o iguales a md -->
+                        <img src="img/btn_voluntariado_experiencial.webp" alt="Voluntariado Experiencial" class="btn-img" onclick="filtrarServicios('voluntariado-experiencial')" onmouseover="this.src='img/btn_voluntariado_experiencial_hover.webp'" onmouseout="this.src='img/btn_voluntariado_experiencial.webp'">
+                        
+                        <img src="img/btn_bienestar.webp" alt="Bienestar" class="btn-img" onclick="filtrarServicios('bienestar')" onmouseover="this.src='img/btn_bienestar_hover.webp'" onmouseout="this.src='img/btn_bienestar.webp'">
+                        
+                        <img src="img/btn_gestion_comunidades.webp" alt="Gestión de Comunidades" class="btn-img" onclick="filtrarServicios('gestion-de-comunidades')" onmouseover="this.src='img/btn_gestion_comunidades_hover.webp'" onmouseout="this.src='img/btn_gestion_comunidades.webp'">
+                        
+                        <!--<img src="ruta/a/tu/imagen4.png" alt="Voluntariado Corporativo" class="btn-img" onclick="filtrarServicios('voluntariado-corporativo')" onmouseover="this.src='ruta/a/otra/imagen4-hover.png'" onmouseout="this.src='ruta/a/tu/imagen4.png'">-->
+                      </div>
+                      <br><br>
+                </div>
+        
+                <div id="servicios-container" class="container-xxl">
+                    <!--<div id="servicios-container" class="row d-flex justify-content-center"></div>-->
+                    <div class="servicio voluntariado-experiencial ">
+                        <div class="container-xxl text-center">
+                            <hr style="border: 1px solid #98C79B;">
+                            <h6>EXPERIENCIAS DE VOLUNTARIADO EXPERIENCIAL</h6>
+                            <br>
+                        </div>
+                        <div id="servicios-voluntariado-experiencial" class="row d-flex justify-content-center">
+                        </div>
+                    </div>
+                    
+                    <div class="servicio bienestar ">
+                        <div class="container-xxl text-center">
+                            <hr style="border: 1px solid #98C79B;">
+                            <h6>EXPERIENCIAS DE BIENESTAR</h6>
+                            <br>
+                        </div>
+                        <div id="servicios-bienestar" class="row d-flex justify-content-center">
+                        </div>
+                    </div>
+        
+                    <div class="servicio gestion-de-comunidades">
+                        <div class="container-xxl text-center">
+                            <hr style="border: 1px solid #98C79B;">
+                            <h6>EXPERIENCIAS DE GESTIÓN DE COMUNIDADES</h6>
+                            <br>
+                        </div>
+                        <div id="servicios-gestion-comunidades" class="row d-flex justify-content-center">
+                        </div>
+                    </div>
+        
+                    <div class="servicio voluntariado-corporativo">Servicio 4</div>
+                </div>
+
             </div>
         </div>
-          <br><br><br><br>
     </section>
     <br>
     <br>

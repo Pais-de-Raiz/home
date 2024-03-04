@@ -343,6 +343,16 @@ h4 {
     background-position: center;
 }
 
+.btn-img {
+    width: 263px; /* Ancho fijo de 263px */
+    height: 162px; /* Ajusta la altura según tus necesidades */
+    margin:20px;
+}
+
+ .btn-img:hover {
+    cursor: pointer;
+}
+
 
 
 @media (max-width: 1200px) {

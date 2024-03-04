@@ -160,12 +160,28 @@ document.addEventListener('DOMContentLoaded', function () {
     xhr.send();
 });
 
+// Filtrar y mostrar servicios de "Voluntariado Experiencial" al cargar la página
+document.addEventListener('DOMContentLoaded', function () {
+    filtrarServicios('voluntariado-experiencial');
+  });
 
+  function filtrarServicios(categoria) {
+    // Oculta todos los servicios
+    const servicios = document.querySelectorAll('.servicio');
+    servicios.forEach(servicio => servicio.style.display = 'none');
 
+    // Muestra solo los servicios de la categoría seleccionada
+    const serviciosCategoria = document.querySelectorAll(`.servicio.${categoria}`);
+    serviciosCategoria.forEach(servicio => servicio.style.display = 'block');
+}
 
-var tarjetasContainer = document.getElementById('servicios-container');
+ // Alistamiento de .JSON
+ //
+ //
+ //Cargar de tarjetas de voluntariado experencial
+var tarjetasContainer = document.getElementById('servicios-voluntariado-experiencial');
 
-fetch('servicios.json')
+fetch('servicios-voluntariado-experiencial.json')
     .then(response => response.json())
     .then(data => {
         data.forEach(item => {
@@ -211,6 +227,110 @@ fetch('servicios.json')
             cardColumn.appendChild(card);
 
             tarjetasContainer.appendChild(cardColumn);
+        });
+    })
+    .catch(error => console.error('Error al cargar el archivo JSON:', error));
+
+//Cargar de tarjetas de Bienestar
+var tarjetasContainer2 = document.getElementById('servicios-bienestar');
+fetch('servicios-bienestar.json')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(item => {
+            var cardColumn = document.createElement('div');
+            cardColumn.className = 'col-12 col-md-6 col-lg-4 col-xl-3';
+
+            var card = document.createElement('div');
+            card.className = 'card';
+
+            var cardImg = document.createElement('img');
+            cardImg.className = 'card-img-top';
+            cardImg.src = item.card.imgSrc;
+            cardImg.alt = item.card.imgAlt;
+            cardImg.style.borderRadius = '20px 20px 0px 0px'
+            //estilo
+            card.style.width = '19rem';
+            card.style.height = '35rem';
+            card.style.margin = '10px auto';
+
+            var cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
+
+            var cardTitle = document.createElement('h5');
+            cardTitle.className = 'card-title';
+            cardTitle.innerText = item.card.title;
+
+            var cardText = document.createElement('p');
+            cardText.className = 'card-text';
+            cardText.innerText = item.card.text;
+
+            var btn = document.createElement('a');
+            btn.className = 'btn btn-primary';
+            btn.href = item.card.btnLink;
+            btn.innerText = item.card.btnText;
+
+            cardBody.appendChild(cardTitle);
+            cardBody.appendChild(cardText);
+            cardBody.appendChild(btn);
+
+            card.appendChild(cardImg);
+            card.appendChild(cardBody);
+
+            cardColumn.appendChild(card);
+
+            tarjetasContainer2.appendChild(cardColumn);
+        });
+    })
+    .catch(error => console.error('Error al cargar el archivo JSON:', error));
+
+//Cargar de tarjetas de Gestion de comunidades
+var tarjetasContainer3 = document.getElementById('servicios-gestion-comunidades');
+fetch('servicios-gestion-comunidades.json')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(item => {
+            var cardColumn = document.createElement('div');
+            cardColumn.className = 'col-12 col-md-6 col-lg-4 col-xl-3';
+
+            var card = document.createElement('div');
+            card.className = 'card';
+
+            var cardImg = document.createElement('img');
+            cardImg.className = 'card-img-top';
+            cardImg.src = item.card.imgSrc;
+            cardImg.alt = item.card.imgAlt;
+            cardImg.style.borderRadius = '20px 20px 0px 0px'
+            //estilo
+            card.style.width = '19rem';
+            card.style.height = '35rem';
+            card.style.margin = '10px auto';
+
+            var cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
+
+            var cardTitle = document.createElement('h5');
+            cardTitle.className = 'card-title';
+            cardTitle.innerText = item.card.title;
+
+            var cardText = document.createElement('p');
+            cardText.className = 'card-text';
+            cardText.innerText = item.card.text;
+
+            var btn = document.createElement('a');
+            btn.className = 'btn btn-primary';
+            btn.href = item.card.btnLink;
+            btn.innerText = item.card.btnText;
+
+            cardBody.appendChild(cardTitle);
+            cardBody.appendChild(cardText);
+            cardBody.appendChild(btn);
+
+            card.appendChild(cardImg);
+            card.appendChild(cardBody);
+
+            cardColumn.appendChild(card);
+
+            tarjetasContainer3.appendChild(cardColumn);
         });
     })
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
