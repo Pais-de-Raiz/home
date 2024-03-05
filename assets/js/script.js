@@ -17,6 +17,24 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Cargar el contenido del head.html en la sección con id "Bannercomunidades"
+    var bannercomunidadesContainer = document.getElementById('banner-comunidades');
+    var xhr = new XMLHttpRequest();
+    
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                bannercomunidadesContainer.innerHTML = xhr.responseText;
+            } else {
+                console.error('Error al cargar head: ' + xhr.status);
+            }
+        }
+    };
+    xhr.open('GET', 'assets/partials/banner_comunidades.html', true);
+    xhr.send();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
     // Cargar el contenido del footer.html en la sección con id "footer"
     var navbarContainer = document.getElementById('navbar');
     var xhr = new XMLHttpRequest();
@@ -439,4 +457,10 @@ function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
 
 // Llamadas a la función para cargar tarjetas en diferentes contenedores y con diferentes fundaciones
 cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Biblioseo', 'servicios-biblioseo');
-cargarTarjetasFiltradas('otro-archivo.json', 'OtraFundacion', 'otro-contenedor');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Debra Colombia', 'servicios-debra');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Mujeres de éxito', 'servicios-mujeres');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Corporación Centro Holístico', 'servicios-holistico');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Corporación Entrégate Colombia', 'servicios-entregate');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'CoimpactoB', 'servicios-coimpacto');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Hermanas del Padre Pío', 'servicios-hermanas');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Casa Ronald Mac Donald -Familias', 'servicios-mcdonald');
