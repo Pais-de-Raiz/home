@@ -464,3 +464,13 @@ cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Corporació
 cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'CoimpactoB', 'servicios-coimpacto');
 cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Hermanas del Padre Pío', 'servicios-hermanas');
 cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Casa Ronald Mac Donald -Familias', 'servicios-mcdonald');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Quipu Ainy', 'servicios-quipu');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Humanos 3D ', 'servicios-humanos');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'San Antonio', 'servicios-fsa');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Techo', 'servicios-techo');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Cartagena al 100%', 'servicios-cartagena');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Trabajando por amor', 'servicios-trabajando');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Samaritanos di Padre Pio', 'servicios-samaritanos');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Tu cultura', 'servicios-cultura');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Fundacion el Quemado', 'servicios-quemado');
+cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Fundacion Bahia y Ecosistemas de Colombia', 'servicios-bahia');
