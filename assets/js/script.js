@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
  //Cargar de tarjetas de voluntariado experencial
 var tarjetasContainer = document.getElementById('servicios-voluntariado-experiencial');
 
-fetch('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json')
+fetch('servicios-voluntariado-experiencial.json')
     .then(response => response.json())
     .then(data => {
         data.forEach(item => {
@@ -234,7 +234,7 @@ fetch('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.j
 
 //Cargar de tarjetas de Bienestar
 var tarjetasContainer2 = document.getElementById('servicios-bienestar');
-fetch('https://pais-de-raiz.github.io/home/servicios-bienestar.json')
+fetch('servicios-bienestar.json')
     .then(response => response.json())
     .then(data => {
         data.forEach(item => {
@@ -286,7 +286,7 @@ fetch('https://pais-de-raiz.github.io/home/servicios-bienestar.json')
 
 //Cargar de tarjetas de Gestion de comunidades
 var tarjetasContainer3 = document.getElementById('servicios-gestion-comunidades');
-fetch('https://pais-de-raiz.github.io/home/servicios-gestion-comunidades.json')
+fetch('servicios-gestion-comunidades.json')
     .then(response => response.json())
     .then(data => {
         data.forEach(item => {
@@ -341,7 +341,7 @@ fetch('https://pais-de-raiz.github.io/home/servicios-gestion-comunidades.json')
 
     var fundacionesContainer = document.getElementById('fundaciones-container');
 
-    fetch('https://pais-de-raiz.github.io/home/fundaciones-cards.json')
+    fetch('fundaciones-cards.json')
         .then(response => response.json())
         .then(data => {
             data.forEach(item => {
