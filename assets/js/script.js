@@ -395,8 +395,8 @@ fetch('servicios-gestion-comunidades.json')
         })
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 
+        
 // Cargar tarjetas filtradas por fundacion:
-
 function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
     var tarjetasContainer = document.getElementById(contenedorId);
 
@@ -456,21 +456,21 @@ function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
 }
 
 // Llamadas a la función para cargar tarjetas en diferentes contenedores y con diferentes fundaciones
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Biblioseo', 'servicios-biblioseo');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Debra Colombia', 'servicios-debra');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Mujeres de éxito', 'servicios-mujeres');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Corporación Centro Holístico', 'servicios-holistico');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Corporación Entrégate Colombia', 'servicios-entregate');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'CoimpactoB', 'servicios-coimpacto');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Hermanas del Padre Pío', 'servicios-hermanas');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Casa Ronald Mac Donald -Familias', 'servicios-mcdonald');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Quipu Ainy', 'servicios-quipu');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Humanos 3D ', 'servicios-humanos');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'San Antonio', 'servicios-fsa');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Techo', 'servicios-techo');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Cartagena al 100%', 'servicios-cartagena');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Trabajando por amor', 'servicios-trabajando');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Samaritanos di Padre Pio', 'servicios-samaritanos');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Tu cultura', 'servicios-cultura');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Fundacion el Quemado', 'servicios-quemado');
-cargarTarjetasFiltradas('servicios-voluntariado-experiencial.json', 'Fundacion Bahia y Ecosistemas de Colombia', 'servicios-bahia');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Biblioseo', 'servicios-biblioseo');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Debra Colombia', 'servicios-debra');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Mujeres de éxito', 'servicios-mujeres');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Corporación Centro Holístico', 'servicios-holistico');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Corporación Entrégate Colombia', 'servicios-entregate');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'CoimpactoB', 'servicios-coimpacto');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Hermanas del Padre Pío', 'servicios-hermanas');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Casa Ronald Mac Donald -Familias', 'servicios-mcdonald');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Quipu Ainy', 'servicios-quipu');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Humanos 3D ', 'servicios-humanos');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'San Antonio', 'servicios-fsa');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Techo', 'servicios-techo');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Cartagena al 100%', 'servicios-cartagena');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Trabajando por amor', 'servicios-trabajando');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Samaritanos di Padre Pio', 'servicios-samaritanos');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Tu cultura', 'servicios-cultura');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Fundacion el Quemado', 'servicios-quemado');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Fundacion Bahia y Ecosistemas de Colombia', 'servicios-bahia');
