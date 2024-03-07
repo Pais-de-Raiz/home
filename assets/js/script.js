@@ -199,7 +199,7 @@ fetch('servicios-voluntariado-experiencial.json')
             cardImg.style.borderRadius = '20px 20px 0px 0px'
             //estilo
             card.style.width = '19rem';
-            card.style.height = '35rem';
+            card.style.height = '30rem';
             card.style.margin = '10px auto';
 
             var cardBody = document.createElement('div');
@@ -251,7 +251,7 @@ fetch('servicios-bienestar.json')
             cardImg.style.borderRadius = '20px 20px 0px 0px'
             //estilo
             card.style.width = '19rem';
-            card.style.height = '35rem';
+            card.style.height = '30rem';
             card.style.margin = '10px auto';
 
             var cardBody = document.createElement('div');
@@ -303,7 +303,7 @@ fetch('servicios-gestion-comunidades.json')
             cardImg.style.borderRadius = '20px 20px 0px 0px'
             //estilo
             card.style.width = '19rem';
-            card.style.height = '35rem';
+            card.style.height = '30rem';
             card.style.margin = '10px auto';
 
             var cardBody = document.createElement('div');
@@ -421,7 +421,7 @@ function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
 
                 // Estilo
                 card.style.width = '19rem';
-                card.style.height = '35rem';
+                card.style.height = '30rem';
                 card.style.margin = '10px auto';
 
                 var cardBody = document.createElement('div');
