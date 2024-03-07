@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'assets/partials/banner_comunidades.html', true);
+    xhr.open('GET', 'https://pais-de-raiz.github.io/home/assets/partials/banner_comunidades.html', true);
     xhr.send();
 });
 
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'assets/partials/navbar.html', true);
+    xhr.open('GET', 'https://pais-de-raiz.github.io/home/assets/partials/navbar.html', true);
     xhr.send();
 });
 
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'assets/partials/footer.html', true);
+    xhr.open('GET', 'https://pais-de-raiz.github.io/home/assets/partials/footer.html', true);
     xhr.send();
 });
 
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'assets/partials/slider.html', true);
+    xhr.open('GET', 'https://pais-de-raiz.github.io/home/assets/partials/slider.html', true);
     xhr.send();
 });
 
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'assets/partials/filosofia.html', true);
+    xhr.open('GET', 'https://pais-de-raiz.github.io/home/assets/partials/filosofia.html', true);
     xhr.send();
 });
 
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'assets/partials/do.html', true);
+    xhr.open('GET', 'https://pais-de-raiz.github.io/home/assets/partials/do.html', true);
     xhr.send();
 });
 
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'assets/partials/quotes.html', true);
+    xhr.open('GET', 'https://pais-de-raiz.github.io/home/assets/partials/quotes.html', true);
     xhr.send();
 });
 
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'assets/partials/services.html', true);
+    xhr.open('GET', 'https://pais-de-raiz.github.io/home/assets/partials/services.html', true);
     xhr.send();
 });
 
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
  //Cargar de tarjetas de voluntariado experencial
 var tarjetasContainer = document.getElementById('servicios-voluntariado-experiencial');
 
-fetch('servicios-voluntariado-experiencial.json')
+fetch('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json')
     .then(response => response.json())
     .then(data => {
         data.forEach(item => {
@@ -234,7 +234,7 @@ fetch('servicios-voluntariado-experiencial.json')
 
 //Cargar de tarjetas de Bienestar
 var tarjetasContainer2 = document.getElementById('servicios-bienestar');
-fetch('servicios-bienestar.json')
+fetch('https://pais-de-raiz.github.io/home/servicios-bienestar.json')
     .then(response => response.json())
     .then(data => {
         data.forEach(item => {
@@ -286,7 +286,7 @@ fetch('servicios-bienestar.json')
 
 //Cargar de tarjetas de Gestion de comunidades
 var tarjetasContainer3 = document.getElementById('servicios-gestion-comunidades');
-fetch('servicios-gestion-comunidades.json')
+fetch('https://pais-de-raiz.github.io/home/servicios-gestion-comunidades.json')
     .then(response => response.json())
     .then(data => {
         data.forEach(item => {
@@ -341,7 +341,7 @@ fetch('servicios-gestion-comunidades.json')
 
     var fundacionesContainer = document.getElementById('fundaciones-container');
 
-    fetch('fundaciones-cards.json')
+    fetch('https://pais-de-raiz.github.io/home/fundaciones-cards.json')
         .then(response => response.json())
         .then(data => {
             data.forEach(item => {
