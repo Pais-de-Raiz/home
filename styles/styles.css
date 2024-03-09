@@ -351,6 +351,12 @@ h4 {
     cursor: pointer;
 }
 
+.img-fluid2 {
+    max-width: 20%;
+    height: auto;
+    margin:auto 20px;
+}
+
 @media (min-width: 1178px) {
     .fixed-card {
         position: fixed;
@@ -441,6 +447,12 @@ h4 {
 
     .comunidadProfile {
         width: 150px;
+    }
+
+    .img-fluid2 {
+        max-width: 30%;
+        height: auto;
+        margin:auto 5px;
     }
 
 }
