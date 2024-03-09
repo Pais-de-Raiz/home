@@ -474,3 +474,68 @@ cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntari
 cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Tu cultura', 'servicios-cultura');
 cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Fundacion el Quemado', 'servicios-quemado');
 cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Fundacion Bahia y Ecosistemas de Colombia', 'servicios-bahia');
+
+window.addEventListener('scroll', function () {
+    var fixedCard = document.getElementById('fixedCard');
+    var contenido = document.querySelector('.contenido');
+    var contenidoBottom = contenido.offsetTop + contenido.clientHeight;
+    var scrollPosition = window.scrollY;
+  
+    // Cambia la clase solo cuando el scroll llega al final del contenido
+    if (scrollPosition >= contenidoBottom) {
+      fixedCard.classList.remove('fixed');
+    } else {
+      fixedCard.classList.add('fixed');
+    }
+});
+
+
+
+// Cargar tarjetas filtradas por servicio:
+function cargarTarjetasFiltradas2(jsonFile, fundacion, contenedorId) {
+    var tarjetasContainer2 = document.getElementById(contenedorId);
+
+    fetch(jsonFile)
+        .then(response => response.json())
+        .then(data => {
+            // Filtrar tarjetas con la fundación específica
+            var tarjetasFiltradas = data.filter(item => item.card.fundacion === fundacion);
+
+            tarjetasFiltradas.forEach(item => {
+                var cardColumn = document.createElement('div');
+
+                var card = document.createElement('div');
+                card.className = 'card';
+
+                var cardImg = document.createElement('img');
+                cardImg.className = 'card-img-top';
+                cardImg.src = item.card.imgSrc;
+                cardImg.alt = item.card.imgAlt;
+                cardImg.style.borderRadius = '20px 20px 0px 0px';
+
+                // Estilo
+                card.style.width = '18rem';
+                card.style.height = '250px';
+                card.style.margin = 'auto';
+
+                var cardBody = document.createElement('div');
+                cardBody.className = 'card-body';
+
+                var cardTitle = document.createElement('h5');
+                cardTitle.className = 'card-title';
+                cardTitle.innerText = item.card.title;
+
+                cardBody.appendChild(cardTitle);
+
+                card.appendChild(cardImg);
+                card.appendChild(cardBody);
+
+                cardColumn.appendChild(card);
+
+                tarjetasContainer2.appendChild(cardColumn);
+            });
+        })
+        .catch(error => console.error('Error al cargar el archivo JSON:', error));
+}
+
+cargarTarjetasFiltradas2('servicios2-cards.json', 'Biblioseo', 'servicios-detalle');
