@@ -538,4 +538,4 @@ function cargarTarjetasFiltradas2(jsonFile, fundacion, contenedorId) {
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
-cargarTarjetasFiltradas2('servicios2-cards.json', 'Biblioseo', 'servicios-detalle');
+cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios2-cards.json', 'Biblioseo', 'servicios-detalle');
