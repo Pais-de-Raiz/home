@@ -586,7 +586,7 @@ cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-gestion-
 
 
 // Cargar tarjetas filtradas por categoría:
-function cargarTarjetasFiltrada4(jsonFile, categoria, contenedorId) {
+function cargarTarjetasFiltradas4(jsonFile, categoria, contenedorId) {
     var tarjetasContainer4 = document.getElementById(contenedorId);
 
     fetch(jsonFile)
@@ -644,7 +644,20 @@ function cargarTarjetasFiltrada4(jsonFile, categoria, contenedorId) {
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
-cargarTarjetasFiltradas4('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
+cargarTarjetasFiltradas4('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-salud');
+cargarTarjetasFiltradas4('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Educación infantil y Juvenil', 'servicio-educacion');
+cargarTarjetasFiltradas4('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Deporte', 'servicio-educacion');
+cargarTarjetasFiltradas4('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Seguridad Alimentaria', 'servicio-educacion');
+cargarTarjetasFiltradas4('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Discapacidad', 'servicio-educacion');
+cargarTarjetasFiltradas4('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Arte y Cultura', 'servicio-educacion');
+cargarTarjetasFiltradas4('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Mejoramiento de Condiciones De Vida // Construcción de espacios dignos.', 'servicio-educacion');
+cargarTarjetasFiltradas4('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Cuidado Del Medio Ambiente', 'servicio-educacion');
+cargarTarjetasFiltradas4('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Cuidado del Adulto Mayor', 'servicio-educacion');
+cargarTarjetasFiltradas4('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Empoderamiento de las Mujeres', 'servicio-educacion');
+cargarTarjetasFiltradas4('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Comunidad Indígena', 'servicio-educacion');
+cargarTarjetasFiltradas4('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Paz Y Reconciliación', 'servicio-educacion');
+cargarTarjetasFiltradas4('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Protección Animal', 'servicio-educacion');
+
 
 
 
