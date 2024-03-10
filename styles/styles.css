@@ -246,8 +246,8 @@ h4 {
   }
   
   .slider2 .slide-track2 {
-    -webkit-animation: scroll 20s linear infinite;
-    animation: scroll 20s linear infinite;
+    -webkit-animation: scroll 40s linear infinite;
+    animation: scroll 40s linear infinite;
     display: flex;
     width: fit-content;
   }
