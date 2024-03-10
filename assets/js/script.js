@@ -581,3 +581,52 @@ cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-bienesta
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-gestion-comunidades.json', 'exp-g-001', 'servicio-exp-g-001');
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-gestion-comunidades.json', 'exp-g-002', 'servicio-exp-g-002');
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-gestion-comunidades.json', 'exp-g-003', 'servicio-exp-g-003');
+
+// Cargar tarjetas filtradas por categoría:
+function cargarTarjetasFiltradas3(jsonFile, categoria, contenedorId) {
+    var tarjetasContainer3 = document.getElementById(contenedorId);
+
+    fetch(jsonFile)
+        .then(response => response.json())
+        .then(data => {
+            // Filtrar tarjetas con la fundación específica
+            var tarjetasFiltradas = data.filter(item => item.card.categoria === categoria);
+
+            tarjetasFiltradas.forEach(item => {
+                var cardColumn = document.createElement('div');
+
+                var card = document.createElement('div');
+                card.className = 'card';
+
+                var cardImg = document.createElement('img');
+                cardImg.className = 'card-img-top';
+                cardImg.src = item.card.imgSrc;
+                cardImg.alt = item.card.imgAlt;
+                cardImg.style.borderRadius = '20px 20px 0px 0px';
+
+                // Estilo
+                card.style.width = '18rem';
+                card.style.height = '300px';
+                card.style.margin = 'auto';
+
+                var cardBody = document.createElement('div');
+                cardBody.className = 'card-body';
+
+                var cardTitle = document.createElement('h5');
+                cardTitle.className = 'card-title';
+                cardTitle.innerText = item.card.title;
+
+                cardBody.appendChild(cardTitle);
+
+                card.appendChild(cardImg);
+                card.appendChild(cardBody);
+
+                cardColumn.appendChild(card);
+
+                tarjetasContainer3.appendChild(cardColumn);
+            });
+        })
+        .catch(error => console.error('Error al cargar el archivo JSON:', error));
+}
+
+cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
