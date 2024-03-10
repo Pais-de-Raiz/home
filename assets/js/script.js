@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (xhr.status === 200) {
                 bannercomunidadesContainer.innerHTML = xhr.responseText;
             } else {
-                console.error('Error al cargar head: ' + xhr.status);
+                console.error('Error al cargar banner comunidades: ' + xhr.status);
             }
         }
     };
@@ -515,7 +515,7 @@ function cargarTarjetasFiltradas2(jsonFile, codigo, contenedorId) {
 
                 // Estilo
                 card.style.width = '18rem';
-                card.style.height = '250px';
+                card.style.height = '300px';
                 card.style.margin = 'auto';
 
                 var cardBody = document.createElement('div');
@@ -573,6 +573,6 @@ cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-voluntar
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-bienestar.json', 'exp-b-001', 'servicio-exp-b-001');
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-bienestar.json', 'exp-b-002', 'servicio-exp-b-002');
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-bienestar.json', 'exp-b-003', 'servicio-exp-b-003');
-cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-gestion-comunidades.json', 'exp-g-003', 'servicio-exp-g-001');
-cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-gestion-comunidades.json', 'exp-g-003', 'servicio-exp-g-002');
+cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-gestion-comunidades.json', 'exp-g-001', 'servicio-exp-g-001');
+cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-gestion-comunidades.json', 'exp-g-002', 'servicio-exp-g-002');
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-gestion-comunidades.json', 'exp-g-003', 'servicio-exp-g-003');
