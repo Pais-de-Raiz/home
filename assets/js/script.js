@@ -586,7 +586,7 @@ cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-gestion-
 
 
 // Cargar tarjetas filtradas por categoría:
-function cargarTarjetasFiltradas3(jsonFile, categoria, contenedorId) {
+function cargarTarjetasFiltradas(jsonFile, categoria, contenedorId) {
     var tarjetasContainer4 = document.getElementById(contenedorId);
 
     fetch(jsonFile)
@@ -644,6 +644,17 @@ function cargarTarjetasFiltradas3(jsonFile, categoria, contenedorId) {
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
+cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
+cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
+cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
+cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
+cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
+cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
+cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
+cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
+cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
+cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
+cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
 cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
 
 
