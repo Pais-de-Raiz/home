@@ -645,3 +645,38 @@ function cargarTarjetasFiltradas3(jsonFile, categoria, contenedorId) {
 }
 
 cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Asignar evento clic a todos los enlaces de categorías
+    var enlacesCategorias = document.querySelectorAll('.dropdown-item');
+    enlacesCategorias.forEach(function(enlace) {
+        enlace.addEventListener('click', function(event) {
+            event.preventDefault();
+            var categoria = this.getAttribute('data-categoria');
+            mostrarCategoria(categoria);
+        });
+    });
+});
+
+function mostrarCategoria(categoria) {
+    // Ocultar todos los divs de categorías
+    ocultarTodosLosDivs();
+
+    // Mostrar el div de la categoría seleccionada
+    var divCategoria = document.getElementById(categoria);
+    if (divCategoria) {
+        divCategoria.style.display = 'block';
+    }
+}
+
+function ocultarTodosLosDivs() {
+    // Ocultar todos los divs de categorías
+    var divsCategorias = document.querySelectorAll('.categoria');
+    divsCategorias.forEach(function(div) {
+        div.style.display = 'none';
+    });
+}
