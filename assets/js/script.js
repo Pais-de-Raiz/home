@@ -617,10 +617,22 @@ function cargarTarjetasFiltradas3(jsonFile, categoria, contenedorId) {
                 cardTitle.className = 'card-title';
                 cardTitle.innerText = item.card.title;
 
+                var cardText = document.createElement('p');
+                cardText.className = 'card-text';
+                cardText.innerText = item.card.text;
+
+                var btn = document.createElement('a');
+                btn.className = 'btn btn-primary';
+                btn.href = item.card.btnLink;
+                btn.innerText = item.card.btnText;
+
                 cardBody.appendChild(cardTitle);
+                cardBody.appendChild(cardText);
+                cardBody.appendChild(btn);
 
                 card.appendChild(cardImg);
                 card.appendChild(cardBody);
+                
 
                 cardColumn.appendChild(card);
 
