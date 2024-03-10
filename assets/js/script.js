@@ -653,7 +653,7 @@ document.addEventListener('DOMContentLoaded', function() {
     enlacesCategorias.forEach(function(enlace) {
         enlace.addEventListener('click', function(event) {
             event.preventDefault();
-            var categoria = this.getAttribute('data-categoria');
+            var categoria = this.getAttribute('href').substring(1); // Obtener el ID de la categoría desde el href
             mostrarCategoria(categoria);
         });
     });
