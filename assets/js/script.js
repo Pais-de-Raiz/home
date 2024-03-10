@@ -582,9 +582,12 @@ cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-gestion-
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-gestion-comunidades.json', 'exp-g-002', 'servicio-exp-g-002');
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-gestion-comunidades.json', 'exp-g-003', 'servicio-exp-g-003');
 
+
+
+
 // Cargar tarjetas filtradas por categoría:
 function cargarTarjetasFiltradas3(jsonFile, categoria, contenedorId) {
-    var tarjetasContainer3 = document.getElementById(contenedorId);
+    var tarjetasContainer4 = document.getElementById(contenedorId);
 
     fetch(jsonFile)
         .then(response => response.json())
@@ -594,49 +597,48 @@ function cargarTarjetasFiltradas3(jsonFile, categoria, contenedorId) {
 
             tarjetasFiltradas.forEach(item => {
                 var cardColumn = document.createElement('div');
-                cardColumn.className = 'col-12 col-md-6 col-lg-4 col-xl-3';
+            cardColumn.className = 'col-12 col-md-6 col-lg-4 col-xl-3';
 
-                var card = document.createElement('div');
-                card.className = 'card';
+            var card = document.createElement('div');
+            card.className = 'card';
 
-                var cardImg = document.createElement('img');
-                cardImg.className = 'card-img-top';
-                cardImg.src = item.card.imgSrc;
-                cardImg.alt = item.card.imgAlt;
-                cardImg.style.borderRadius = '20px 20px 0px 0px';
+            var cardImg = document.createElement('img');
+            cardImg.className = 'card-img-top';
+            cardImg.src = item.card.imgSrc;
+            cardImg.alt = item.card.imgAlt;
+            cardImg.style.borderRadius = '20px 20px 0px 0px'
+            //estilo
+            card.style.width = '19rem';
+            card.style.height = '30rem';
+            card.style.margin = '10px auto';
 
-                // Estilo
-                card.style.width = '18rem';
-                card.style.height = '300px';
-                card.style.margin = 'auto';
+            var cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
 
-                var cardBody = document.createElement('div');
-                cardBody.className = 'card-body';
+            var cardTitle = document.createElement('h5');
+            cardTitle.className = 'card-title';
+            cardTitle.innerText = item.card.title;
 
-                var cardTitle = document.createElement('h5');
-                cardTitle.className = 'card-title';
-                cardTitle.innerText = item.card.title;
+            var cardText = document.createElement('p');
+            cardText.className = 'card-text';
+            cardText.innerText = item.card.text;
 
-                var cardText = document.createElement('p');
-                cardText.className = 'card-text';
-                cardText.innerText = item.card.text;
+            var btn = document.createElement('a');
+            btn.className = 'btn btn-primary';
+            btn.href = item.card.btnLink;
+            btn.innerText = item.card.btnText;
 
-                var btn = document.createElement('a');
-                btn.className = 'btn btn-primary';
-                btn.href = item.card.btnLink;
-                btn.innerText = item.card.btnText;
+            cardBody.appendChild(cardTitle);
+            cardBody.appendChild(cardText);
+            cardBody.appendChild(btn);
 
-                cardBody.appendChild(cardTitle);
-                cardBody.appendChild(cardText);
-                cardBody.appendChild(btn);
+            card.appendChild(cardImg);
+            card.appendChild(cardBody);
 
-                card.appendChild(cardImg);
-                card.appendChild(cardBody);
+            cardColumn.appendChild(card);
+
+            tarjetasContainer4.appendChild(cardColumn);
                 
-
-                cardColumn.appendChild(card);
-
-                tarjetasContainer3.appendChild(cardColumn);
             });
         })
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
