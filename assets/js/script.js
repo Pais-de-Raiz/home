@@ -474,6 +474,8 @@ cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntari
 cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Tu cultura', 'servicios-cultura');
 cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Fundacion el Quemado', 'servicios-quemado');
 cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Fundacion Bahia y Ecosistemas de Colombia', 'servicios-bahia');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Fundación Apoyar', 'servicios-apoyar');
+cargarTarjetasFiltradas('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Fundación alma perruna', 'servicios-perruna');
 
 window.addEventListener('scroll', function () {
     var fixedCard = document.getElementById('fixedCard');
@@ -570,6 +572,9 @@ cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-voluntar
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'exp-v-030', 'servicio-exp-v-030');
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'exp-v-031', 'servicio-exp-v-031');
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'exp-v-032', 'servicio-exp-v-032');
+cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'exp-v-033', 'servicio-exp-v-033');
+cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'exp-v-034', 'servicio-exp-v-034');
+cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'exp-v-035', 'servicio-exp-v-035');
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-bienestar.json', 'exp-b-001', 'servicio-exp-b-001');
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-bienestar.json', 'exp-b-002', 'servicio-exp-b-002');
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-bienestar.json', 'exp-b-003', 'servicio-exp-b-003');
