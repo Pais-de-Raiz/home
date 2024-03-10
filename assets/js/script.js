@@ -517,7 +517,7 @@ function cargarTarjetasFiltradas2(jsonFile, codigo, contenedorId) {
 
                 // Estilo
                 card.style.width = '18rem';
-                card.style.height = '30rem';
+                card.style.height = '300px';
                 card.style.margin = 'auto';
 
                 var cardBody = document.createElement('div');
