@@ -573,3 +573,6 @@ cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-voluntar
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-bienestar.json', 'exp-b-001', 'servicio-exp-b-001');
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-bienestar.json', 'exp-b-002', 'servicio-exp-b-002');
 cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-bienestar.json', 'exp-b-003', 'servicio-exp-b-003');
+cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-gestion-comunidades.json', 'exp-g-003', 'servicio-exp-g-001');
+cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-gestion-comunidades.json', 'exp-g-003', 'servicio-exp-g-002');
+cargarTarjetasFiltradas2('https://pais-de-raiz.github.io/home/servicios-gestion-comunidades.json', 'exp-g-003', 'servicio-exp-g-003');
