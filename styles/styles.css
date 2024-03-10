@@ -373,7 +373,7 @@ h4 {
     border-radius: 0px 0px 50px 50px;
     background-size: repeat;
     background-position: center;
-    height:180px;
+    height:220px;
 }
 
 .btn-img {
@@ -388,6 +388,18 @@ h4 {
     max-width: 20%;
     height: auto;
     margin:auto 20px;
+}
+
+.detail {
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid #98C79B;
+    padding:15px;
+}
+
+.detail p {
+    font-size: 14px;
+    margin: 0px;
 }
 
 @media (min-width: 1178px) {
@@ -418,7 +430,7 @@ h4 {
     }
 
     .tittle4 {
-        height:450px;
+        height:550px;
     }
 }
 
