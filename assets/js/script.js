@@ -594,6 +594,7 @@ function cargarTarjetasFiltradas3(jsonFile, categoria, contenedorId) {
 
             tarjetasFiltradas.forEach(item => {
                 var cardColumn = document.createElement('div');
+                cardColumn.className = 'col-12 col-md-6 col-lg-4 col-xl-3';
 
                 var card = document.createElement('div');
                 card.className = 'card';
