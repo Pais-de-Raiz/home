@@ -645,17 +645,7 @@ function cargarTarjetasFiltradas(jsonFile, categoria, contenedorId) {
 }
 
 cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
-cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
-cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
-cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
-cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
-cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
-cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
-cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
-cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
-cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
-cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
-cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
