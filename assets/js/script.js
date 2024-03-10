@@ -647,9 +647,6 @@ function cargarTarjetasFiltradas3(jsonFile, categoria, contenedorId) {
 cargarTarjetasFiltradas3('https://pais-de-raiz.github.io/home/servicios-voluntariado-experiencial.json', 'Salud', 'servicio-Salud');
 
 
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     // Asignar evento clic a todos los enlaces de categorías
     var enlacesCategorias = document.querySelectorAll('.dropdown-item');
