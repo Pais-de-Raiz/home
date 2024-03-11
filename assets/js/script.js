@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'home/assets/partials/navbar.html', true);
+    xhr.open('GET', 'assets/partials/navbar.html', true);
     xhr.send();
 });
 
