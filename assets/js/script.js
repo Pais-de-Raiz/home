@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'https://pais-de-raiz.github.io/home/assets/partials/banner_comunidades.html', true);
+    xhr.open('GET', 'assets/partials/banner_comunidades.html', true);
     xhr.send();
 });
 
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'https://pais-de-raiz.github.io/home/assets/partials/navbar.html', true);
+    xhr.open('GET', 'home/assets/partials/navbar.html', true);
     xhr.send();
 });
 
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'https://pais-de-raiz.github.io/home/assets/partials/footer.html', true);
+    xhr.open('GET', 'assets/partials/footer.html', true);
     xhr.send();
 });
 
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'https://pais-de-raiz.github.io/home/assets/partials/slider.html', true);
+    xhr.open('GET', 'assets/partials/slider.html', true);
     xhr.send();
 });
 
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'https://pais-de-raiz.github.io/home/assets/partials/filosofia.html', true);
+    xhr.open('GET', 'assets/partials/filosofia.html', true);
     xhr.send();
 });
 
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'https://pais-de-raiz.github.io/home/assets/partials/do.html', true);
+    xhr.open('GET', 'assets/partials/do.html', true);
     xhr.send();
 });
 
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'https://pais-de-raiz.github.io/home/assets/partials/quotes.html', true);
+    xhr.open('GET', 'assets/partials/quotes.html', true);
     xhr.send();
 });
 
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'https://pais-de-raiz.github.io/home/assets/partials/services.html', true);
+    xhr.open('GET', 'assets/partials/services.html', true);
     xhr.send();
 });
 
