@@ -22,62 +22,157 @@
         </div>
     </section>
 
-    <section>
-        <div class="container-fluid">
-            <div class="container-xxl">
+    <div class="container-fluid">
+        <div class="container-xxl text-center">
+            <br>
+            <h1 style="margin-bottom:0px">Te invitamos a conocer nuestras experiencias.</h1>
+            <P style="margin: 0px;">Encuentra las mejores experiencias que se adaptan a tus intereses.</P>
+            <br>
+        </div>
+
+        <div class="text-center" style="margin:0px">
+            <div class="btn-group d-md-inline">
+                <!-- Para tamaños de pantalla mayores o iguales a md -->
+                <img src="../../img/btn_voluntariado_experiencial.webp" alt="Voluntariado Experiencial" class="img-fluid2" onclick="filtrarServicios('voluntariado-experiencial')" onmouseover="this.src='img/btn_voluntariado_experiencial_hover.webp'" onmouseout="this.src='img/btn_voluntariado_experiencial.webp'" style="width:auto;">
+                
+                <img src="../../img/btn_bienestar.webp" alt="Bienestar" class="img-fluid2" onclick="filtrarServicios('bienestar')" onmouseover="this.src='img/btn_bienestar_hover.webp'" onmouseout="this.src='img/btn_bienestar.webp'">
+                
+                <img src="../../img/btn_gestion_comunidades.webp" alt="Gestión de Comunidades" class="img-fluid2" onclick="filtrarServicios('gestion-de-comunidades')" onmouseover="this.src='img/btn_gestion_comunidades_hover.webp'" onmouseout="this.src='img/btn_gestion_comunidades.webp'">
+                
+                <!--<img src="ruta/a/tu/imagen4.png" alt="Voluntariado Corporativo" class="btn-img" onclick="filtrarServicios('voluntariado-corporativo')" onmouseover="this.src='ruta/a/otra/imagen4-hover.png'" onmouseout="this.src='ruta/a/tu/imagen4.png'">-->
+              </div>
+              <br><br>
+        </div>
+
+
+        <div id="servicios-container" class="container-xxl">
+            <!--<div id="servicios-container" class="row d-flex justify-content-center"></div>-->
+            <div class="servicio voluntariado-experiencial ">
                 <div class="container-xxl text-center">
-                    <div class="btn-group d-md-inline">
-                        <br>
-                        <!-- Para tamaños de pantalla mayores o iguales a md -->
-                        <img src="img/btn_voluntariado_experiencial.webp" alt="Voluntariado Experiencial" class="img-fluid2" onclick="filtrarServicios('voluntariado-experiencial')" onmouseover="this.src='img/btn_voluntariado_experiencial_hover.webp'" onmouseout="this.src='img/btn_voluntariado_experiencial.webp'">
-                        
-                        <img src="img/btn_bienestar.webp" alt="Bienestar" class="img-fluid2" onclick="filtrarServicios('bienestar')" onmouseover="this.src='img/btn_bienestar_hover.webp'" onmouseout="this.src='img/btn_bienestar.webp'">
-                        
-                        <img src="img/btn_gestion_comunidades.webp" alt="Gestión de Comunidades" class="img-fluid2" onclick="filtrarServicios('gestion-de-comunidades')" onmouseover="this.src='img/btn_gestion_comunidades_hover.webp'" onmouseout="this.src='img/btn_gestion_comunidades.webp'">
-                        
-                        <!--<img src="ruta/a/tu/imagen4.png" alt="Voluntariado Corporativo" class="btn-img" onclick="filtrarServicios('voluntariado-corporativo')" onmouseover="this.src='ruta/a/otra/imagen4-hover.png'" onmouseout="this.src='ruta/a/tu/imagen4.png'">-->
-                      </div>
-                      <br><br>
+                    <hr style="border: 1px solid #98C79B;">
+                    <h6>EXPERIENCIAS DE VOLUNTARIADO EXPERIENCIAL</h6>
+                    <p style="max-width: 800px;margin: auto;">A través de nuestra red de más de 20 Fundaciones aliadas, tendrás la oportunidad de elegir la experiencia de voluntariado que más resuene con tu propósito y le permita a tu organización ir a donde mayor impacto pueda generar.</p>
+                    <br>
                 </div>
-        
-                <div id="servicios-container" class="container-xxl">
-                    <!--<div id="servicios-container" class="row d-flex justify-content-center"></div>-->
-                    <div class="servicio voluntariado-experiencial ">
-                        <div class="container-xxl text-center">
-                            <hr style="border: 1px solid #98C79B;">
-                            <h6>EXPERIENCIAS DE VOLUNTARIADO EXPERIENCIAL</h6>
-                            <br>
-                        </div>
-                        <div id="servicios-voluntariado-experiencial" class="row d-flex justify-content-center">
-                        </div>
+                <div>
+                    <div class="dropdown-center text-end">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Categorías
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#todos" onclick="mostrarCategoria('todos')">Todos</a></li>
+                            <li><a class="dropdown-item" href="#salud" onclick="mostrarCategoria('salud')">Salud</a></li>
+                            <li><a class="dropdown-item" href="#educacion" onclick="mostrarCategoria('educacion')">Educación infantil y juvenil</a></li>
+                            <li><a class="dropdown-item" href="#deporte" onclick="mostrarCategoria('deporte')">Deporte</a></li>
+                            <li><a class="dropdown-item" href="#discapacidad" onclick="mostrarCategoria('discapacidad')">Discapacidad</a></li>
+                            <li><a class="dropdown-item" href="#seguridadali" onclick="mostrarCategoria('seguridadali')">Seguridad Alimentaria</a></li>
+                            <li><a class="dropdown-item" href="#artecultura" onclick="mostrarCategoria('artecultura')">Arte y Cultura</a></li>
+                            <li><a class="dropdown-item" href="#construccion" onclick="mostrarCategoria('construccion')">Construcción de espacios dignos.</a></li>
+                            <li><a class="dropdown-item" href="#medioambiente" onclick="mostrarCategoria('medioambiente')">Cuidado Del Medio Ambiente</a></li>
+                            <li><a class="dropdown-item" href="#adultomayor" onclick="mostrarCategoria('adultomayor')">Cuidado del Adulto Mayor</a></li>
+                            <li><a class="dropdown-item" href="#mujeres" onclick="mostrarCategoria('mujeres')">Empoderamiento de las Mujeres</a></li>
+                            <li><a class="dropdown-item" href="#comunidad" onclick="mostrarCategoria('comunidad')">Comunidad Indígena</a></li>
+                            <li><a class="dropdown-item" href="#paz" onclick="mostrarCategoria('paz')">Paz Y Reconciliación</a></li>
+                            <li><a class="dropdown-item" href="#animal" onclick="mostrarCategoria('animal')">Protección Animal</a></li>
+                        </ul>
                     </div>
-                    
-                    <div class="servicio bienestar ">
-                        <div class="container-xxl text-center">
-                            <hr style="border: 1px solid #98C79B;">
-                            <h6>EXPERIENCIAS DE BIENESTAR</h6>
-                            <br>
-                        </div>
-                        <div id="servicios-bienestar" class="row d-flex justify-content-center">
-                        </div>
-                    </div>
-        
-                    <div class="servicio gestion-de-comunidades">
-                        <div class="container-xxl text-center">
-                            <hr style="border: 1px solid #98C79B;">
-                            <h6>EXPERIENCIAS DE GESTIÓN DE COMUNIDADES</h6>
-                            <br>
-                        </div>
-                        <div id="servicios-gestion-comunidades" class="row d-flex justify-content-center">
-                        </div>
-                    </div>
-        
-                    <div class="servicio voluntariado-corporativo">Servicio 4</div>
+                    <br>
                 </div>
 
+                <div id="todos" class="categoria">
+                    <h6 class="text-center">TODAS LAS EXPERIENCIAS</h6>
+                    <div id="servicios-voluntariado-experiencial" class="row d-flex justify-content-center"></div>
+                </div>
+                
+                <div id="salud" class="categoria" style="display:none;">
+                    <h6 class="text-center">EXPERIENCIAS DE SALUD</h6>
+                    <div id="servicio-salud" class="row d-flex justify-content-center"></div>
+                </div>
+
+                <div id="educacion" class="categoria" style="display:none;">
+                    <h6 class="text-center">EXPERIENCIAS DE EDUCACIÓN INFANTIL Y JUVENIL</h6>
+                    <div id="servicio-educacion" class="row d-flex justify-content-center"></div>
+                </div>
+
+                <div id="deporte" class="categoria" style="display:none;">
+                    <h6 class="text-center">EXPERIENCIAS DE DEPORTE</h6>
+                    <div id="servicio-deporte" class="row d-flex justify-content-center"></div>
+                </div>
+
+                <div id="seguridadali" class="categoria" style="display:none;">
+                    <h6 class="text-center">EXPERIENCIAS DE SEGURIDAD ALIMENTARIA</h6>
+                    <div id="servicio-seguridadali" class="row d-flex justify-content-center"></div>
+                </div>
+
+                <div id="discapacidad" class="categoria" style="display:none;">
+                    <h6 class="text-center">EXPERIENCIAS DE DISCAPACIDAD</h6>
+                    <div id="servicio-discapacidad" class="row d-flex justify-content-center"></div>
+                </div>
+
+                <div id="artecultura" class="categoria" style="display:none;">
+                    <h6 class="text-center">EXPERIENCIAS DE ARTE Y CULTURA</h6>
+                    <div id="servicio-artecultura" class="row d-flex justify-content-center"></div>
+                </div>
+
+                <div id="construccion" class="categoria" style="display:none;">
+                    <h6 class="text-center">EXPERIENCIAS DE MEJORAMIENTO DE CONDICIONES DE VIDA</h6>
+                    <div id="servicio-construccion" class="row d-flex justify-content-center"></div>
+                </div>
+
+                <div id="medioambiente" class="categoria" style="display:none;">
+                    <h6 class="text-center">EXPERIENCIAS DE MEDIO AMBIENTE</h6>
+                    <div id="servicio-medioambiente" class="row d-flex justify-content-center"></div>
+                </div>
+
+                <div id="adultomayor" class="categoria" style="display:none;">
+                    <h6 class="text-center">EXPERIENCIAS DE CUIDADO DEL ADULTO MAYOR</h6>
+                    <div id="servicio-adulto" class="row d-flex justify-content-center"></div>
+                </div>
+
+                <div id="mujeres" class="categoria" style="display:none;">
+                    <h6 class="text-center">EXPERIENCIAS DE EMPODERAMIENTO DE LAS MUJERES</h6>
+                    <div id="servicio-mujeres" class="row d-flex justify-content-center"></div>
+                </div>
+
+                <div id="comunidad" class="categoria" style="display:none;">
+                    <h6 class="text-center">EXPERIENCIAS DE COMUNIDAD INDÍGENA</h6>
+                    <div id="servicio-comunidad" class="row d-flex justify-content-center"></div>
+                </div>
+
+                <div id="paz" class="categoria" style="display:none;">
+                    <h6 class="text-center">EXPERIENCIAS DE PAZ Y RECONCILIACIÓN</h6>
+                    <div id="servicio-paz" class="row d-flex justify-content-center"></div>
+                </div>
+
+                <div id="animal" class="categoria" style="display:none;">
+                    <h6 class="text-center">EXPERIENCIAS DE PROTECCIÓN ANIMAL</h6>
+                    <div id="servicio-animal" class="row d-flex justify-content-center"></div>
+                </div>
+                    
+            </div>
+            
+            <div class="servicio bienestar ">
+                <div class="container-xxl text-center">
+                    <hr style="border: 1px solid #98C79B;">
+                    <h6>EXPERIENCIAS DE BIENESTAR</h6>
+                    <br>
+                </div>
+                <div id="servicios-bienestar" class="row d-flex justify-content-center">
+                </div>
+            </div>
+
+            <div class="servicio gestion-de-comunidades">
+                <div class="container-xxl text-center">
+                    <hr style="border: 1px solid #98C79B;">
+                    <h6>EXPERIENCIAS DE GESTIÓN DE COMUNIDADES</h6>
+                    <br>
+                </div>
+                <div id="servicios-gestion-comunidades" class="row d-flex justify-content-center">
+                </div>
             </div>
         </div>
-    </section>
+        <br><br><br><br>
+    </div>
     <br>
     <br>
 
@@ -90,8 +185,7 @@
 
     
     <!--Scripts-->
-    <script src="assets/js/script.js"></script>
+    <script src="../../assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
-
 </html>
