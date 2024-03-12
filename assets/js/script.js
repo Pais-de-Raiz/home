@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', "../assets/partials/head.html", true);
+    xhr.open('GET', "../../assets/partials/head.html", true);
     xhr.send();
 });
 
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'assets/partials/navbar.html', true);
+    xhr.open('GET', '../../assets/partials/navbar.html', true);
     xhr.send();
 });
 
