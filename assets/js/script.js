@@ -540,7 +540,7 @@ function cargarTarjetasFiltradas2(jsonFile, codigo, contenedorId) {
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
-cargarTarjetasFiltradas2('servicios-voluntariado-experiencial.json', 'exp-v-001', 'servicio-exp-v-001');
+cargarTarjetasFiltradas2('../servicios-voluntariado-experiencial.json', 'exp-v-001', 'servicio-exp-v-001');
 cargarTarjetasFiltradas2('servicios-voluntariado-experiencial.json', 'exp-v-002', 'servicio-exp-v-002');
 cargarTarjetasFiltradas2('servicios-voluntariado-experiencial.json', 'exp-v-003', 'servicio-exp-v-003');
 cargarTarjetasFiltradas2('servicios-voluntariado-experiencial.json', 'exp-v-004', 'servicio-exp-v-004');
