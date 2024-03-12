@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', "https://www.paisderaiz.com/assets/partials/head.html", true);
+    xhr.open('GET', "https://raw.githubusercontent.com/Pais-de-Raiz/home/main/assets/partials/head.html", true);
     xhr.send();
 });
 
