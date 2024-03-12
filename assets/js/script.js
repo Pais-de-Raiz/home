@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', 'assets/partials/banner_comunidades.html', true);
+    xhr.open('GET', '../../assets/partials/banner_comunidades.html', true);
     xhr.send();
 });
 
