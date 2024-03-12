@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     };
-    xhr.open('GET', "assets/partials/head.html", true);
+    xhr.open('GET', "https://www.paisderaiz.com/assets/partials/head.html", true);
     xhr.send();
 });
 
