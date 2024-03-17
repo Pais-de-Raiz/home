@@ -27,7 +27,7 @@
                     <div class="col-12 col-md-6 d-flex align-items-center">
                         <div>
                             <h1>Multiplicadores del cambio a través del desarrollo social</h1>
-                            <p style="max-width: 400px;">Conectamos con personas, empresas y comunidades para generar impacto.</p>
+                            <p style="max-width: 400px;">Conectamos con personas, empresas y comunidades para generar impacto</p>
                             <a href="https://meetings.hubspot.com/direccioncomercial13" target="_blank">
                                 <button class="btn btn-success btn-md" type="submit" style="margin-left: 0px;">Contáctanos</button>
                             </a>
@@ -36,7 +36,7 @@
                     <div class="col-12 col-md-6">
                         <div class="video-container">
                             <video id="videoPlayer" width="640" loop autoplay playsinline muted>
-                                <source src="img/animacion-intro.mp4" type="video/mp4">
+                                <source src="img/animacion-intro-PR.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
@@ -62,15 +62,15 @@
     <div class="container-fluid">
         <div class="container-xxl text-center">
             <br>
-            <h1 style="margin-bottom:0px">Te invitamos a conocer nuestras experiencias.</h1>
-            <P style="margin: 0px;">Encuentra las mejores experiencias que se adaptan a tus intereses.</P>
+            <h1 style="margin-bottom:0px">Te invitamos a conocer nuestras experiencias</h1>
+            <P style="margin: 0px;">Encuentra las mejores experiencias que se adaptan a tus intereses</P>
             <br>
         </div>
 
         <div class="text-center" style="margin:0px">
             <div class="btn-group d-md-inline">
                 <!-- Para tamaños de pantalla mayores o iguales a md -->
-                <img src="img/btn_voluntariado_experiencial.webp" alt="Voluntariado Experiencial" class="img-fluid2" onclick="filtrarServicios('voluntariado-experiencial')" onmouseover="this.src='img/btn_voluntariado_experiencial_hover.webp'" onmouseout="this.src='img/btn_voluntariado_experiencial.webp'" style="width:auto;">
+                <img src="img/btn_voluntariado_experiencial.webp" alt="Voluntariado Experiencial" class="img-fluid2" onclick="filtrarServicios('voluntariado-experiencial')" onmouseover="this.src='img/btn_voluntariado_experiencial_hover.webp'" onmouseout="this.src='img/btn_voluntariado_experiencial.webp'">
                 
                 <img src="img/btn_bienestar.webp" alt="Bienestar" class="img-fluid2" onclick="filtrarServicios('bienestar')" onmouseover="this.src='img/btn_bienestar_hover.webp'" onmouseout="this.src='img/btn_bienestar.webp'">
                 
@@ -92,10 +92,19 @@
                     <br>
                 </div>
                 <div>
-                    <div class="dropdown-center text-end">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Categorías
-                        </button>
+                    <div class="dropdown-center text-end" style="margin: 20px auto;">
+                        <div class="d-lg-none text-center">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 5px 50px;">
+                                Categorías
+                              </button>
+                        </div>
+
+                        <div class="d-none d-lg-block">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 5px 50px;">
+                                Categorías
+                              </button>
+                        </div>
+
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#todos" onclick="mostrarCategoria('todos')">Todos</a></li>
                             <li><a class="dropdown-item" href="#salud" onclick="mostrarCategoria('salud')">Salud</a></li>

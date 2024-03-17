@@ -407,6 +407,23 @@ h4 {
     margin-left: 33%;
 }
 
+.filosofia-img {
+    margin-top:10px;
+}
+
+.img-fluid2{
+    cursor: pointer;
+}
+
+.btn-secondary {
+    --bs-btn-bg:#FBBB52;
+    --bs-btn-color: #486656;
+    border: solid 2px #486656;
+    border-radius: 20px;
+    margin: auto 30px;
+
+}
+
 @media (min-width: 1178px) {
     .fixed-card {
         position: fixed;
@@ -425,6 +442,7 @@ h4 {
         margin-top: -106px;
         position:absolute;
     }
+    
 }
 
 
@@ -442,6 +460,7 @@ h4 {
         margin-left:0px;
         margin: auto;
     }
+
 }
 
 @media (min-width: 991px) {
@@ -451,6 +470,11 @@ h4 {
         top: 100px; /* Ajusta la posición superior según tus necesidades */
         width: 100%; /* Ancho completo */
         z-index: 1000; /* Asegura que la card esté por encima del contenido principal */
+    }
+
+    .filosofia-img {
+        max-width: 450px;
+        margin-top:10px;
     }
 }
 
