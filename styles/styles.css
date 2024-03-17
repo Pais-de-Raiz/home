@@ -319,7 +319,7 @@ h4 {
 
 .card {
     border-radius: 20px;
-    width: 36rem;
+    /*width: 36rem;*/
 }
 
 /*Estilos quotes section */
@@ -421,6 +421,12 @@ h4 {
     border: solid 2px #486656;
     border-radius: 20px;
     margin: auto 30px;
+
+}
+
+.card-equipo {
+    background-color:transparent;
+    --bs-card-border-color:transparent;
 
 }
 
