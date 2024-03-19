@@ -427,7 +427,8 @@ h4 {
 .card-equipo {
     background-color:transparent;
     --bs-card-border-color:transparent;
-
+    max-width: 18rem;
+    margin: auto;
 }
 
 @media (min-width: 1178px) {
