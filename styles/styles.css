@@ -100,6 +100,11 @@ h4 {
 }
 
 /* Estilos para el footer */
+.modal-formulario .modal-tittle {
+    color: #486656;
+}
+
+
 .footer{
     background-color:#486656 !important;
 }
@@ -117,7 +122,7 @@ h4 {
 .footer h5{
     font-weight:700;
     font-size: 20px;
-    color:#FEF9E2 !important;
+    color:#FEF9E2;
 }
 
 .footer li{
@@ -147,7 +152,27 @@ h4 {
     box-shadow:none;
 }
 
+
+
 .footer input::placeholder{
+    color: #FEF9E2;
+}
+
+.footer textarea{
+    background-color: #486656 ;
+    border: 1px #FEF9E2 solid;
+    border-radius: 0px;
+}
+
+.footer textarea:focus {
+    background-color: #486656 ;
+    border: 1px #FEF9E2 solid;
+    border-radius: 0px;
+    color: #FEF9E2 ;
+    box-shadow:none;
+}
+
+.footer textarea::placeholder{
     color: #FEF9E2;
 }
 

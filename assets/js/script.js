@@ -61,6 +61,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 footerContainer.innerHTML = xhr.responseText;
+
+                // Lógica adicional después de cargar el contenido
+                attachEventListeners();
             } else {
                 console.error('Error al cargar el footer: ' + xhr.status);
             }
@@ -458,20 +461,6 @@ cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Funda
 cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Fundación Apoyar', 'servicios-apoyar');
 cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Fundación alma perruna', 'servicios-perruna');
 
-window.addEventListener('scroll', function () {
-    var fixedCard = document.getElementById('fixedCard');
-    var contenido = document.querySelector('.contenido');
-    var contenidoBottom = contenido.offsetTop + contenido.clientHeight;
-    var scrollPosition = window.scrollY;
-  
-    // Cambia la clase solo cuando el scroll llega al final del contenido
-    if (scrollPosition >= contenidoBottom) {
-      fixedCard.classList.remove('fixed');
-    } else {
-      fixedCard.classList.add('fixed');
-    }
-});
-
 
 
 // Cargar tarjetas filtradas por servicio:
@@ -669,3 +658,52 @@ function ocultarTodosLosDivs() {
         div.style.display = 'none';
     });
 }
+
+//FORMULARIO 
+function attachEventListeners() {
+    // Adjuntar evento al botón de enviar dentro del formulario cargado dinámicamente
+    $('#footer').find('#enviarBtn').click(function() {
+        var nombre = $('#nombre').val();
+        var correo = $('#correo').val();
+        var telefono = $('#telefono').val();
+        var mensaje = $('#mensaje').val();
+
+        if (nombre && correo && telefono && mensaje) {
+            $.ajax({
+                url: 'https://script.google.com/macros/s/AKfycbyv5y9-j_I1c6LNwzLSj21-PTE-maLX-zJ3QOmoSnOscSo2pAWgleVLlONH2dfHOvDmhQ/exec',
+                method: 'POST',
+                data: {
+                    nombre: nombre,
+                    correo: correo,
+                    telefono: telefono,
+                    mensaje: mensaje
+                },
+                success: function(response) {
+                    console.log('¡Formulario enviado exitosamente!');
+                    mostrarModal();
+                    limpiarCampos();
+                },
+                error: function(error) {
+                    console.log('Error al enviar el formulario:', error);
+                }
+            });
+        } else {
+            console.log('Error: Uno o más campos están vacíos.');
+        }
+    });
+}
+
+function mostrarModal() {
+    $('#successModal').modal('show');
+    setTimeout(function() {
+        $('#successModal').modal('hide');
+    }, 3000); // Cerrar el modal después de 3 segundos
+}
+
+function limpiarCampos() {
+    $('#nombre').val('');
+    $('#correo').val('');
+    $('#telefono').val('');
+    $('#mensaje').val('');
+}
+
