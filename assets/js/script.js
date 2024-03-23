@@ -174,7 +174,8 @@ fetch('servicios-voluntariado-experiencial.json')
             cardColumn.className = 'col-12 col-md-6 col-lg-4 col-xl-3';
 
             var card = document.createElement('div');
-            card.className = 'card';
+            //ocupar ancho total 
+            card.className = 'card card-experiencias w-100';
 
             var cardImg = document.createElement('img');
             cardImg.className = 'card-img-top';
@@ -183,11 +184,12 @@ fetch('servicios-voluntariado-experiencial.json')
             cardImg.style.borderRadius = '20px 20px 0px 0px'
             //estilo
             card.style.width = '19rem';
-            card.style.height = '30rem';
+            //card.style.height = '30rem';
             card.style.margin = '10px auto';
 
             var cardBody = document.createElement('div');
-            cardBody.className = 'card-body';
+            //d-flex flex-column colocar boton sabr mas al final
+            cardBody.className = 'card-body d-flex flex-column';
 
             var cardTitle = document.createElement('h5');
             cardTitle.className = 'card-title';
@@ -198,7 +200,8 @@ fetch('servicios-voluntariado-experiencial.json')
             cardText.innerText = item.card.text;
 
             var btn = document.createElement('a');
-            btn.className = 'btn btn-primary';
+            //mt-auto colocar boton sabr mas al final
+            btn.className = 'btn btn-primary mt-auto';
             btn.href = item.card.btnLink;
             btn.innerText = item.card.btnText;
 
@@ -226,7 +229,7 @@ fetch('servicios-bienestar.json')
             cardColumn.className = 'col-12 col-md-6 col-lg-4 col-xl-3';
 
             var card = document.createElement('div');
-            card.className = 'card';
+            card.className = 'card card-experiencias w-100';
 
             var cardImg = document.createElement('img');
             cardImg.className = 'card-img-top';
@@ -235,11 +238,11 @@ fetch('servicios-bienestar.json')
             cardImg.style.borderRadius = '20px 20px 0px 0px'
             //estilo
             card.style.width = '19rem';
-            card.style.height = '30rem';
+            //card.style.height = '30rem';
             card.style.margin = '10px auto';
 
             var cardBody = document.createElement('div');
-            cardBody.className = 'card-body';
+            cardBody.className = 'card-body d-flex flex-column';
 
             var cardTitle = document.createElement('h5');
             cardTitle.className = 'card-title';
@@ -250,7 +253,7 @@ fetch('servicios-bienestar.json')
             cardText.innerText = item.card.text;
 
             var btn = document.createElement('a');
-            btn.className = 'btn btn-primary';
+            btn.className = 'btn btn-primary mt-auto';
             btn.href = item.card.btnLink;
             btn.innerText = item.card.btnText;
 
@@ -278,7 +281,7 @@ fetch('../../servicios-gestion-comunidades.json')
             cardColumn.className = 'col-12 col-md-6 col-lg-4 col-xl-3';
 
             var card = document.createElement('div');
-            card.className = 'card';
+            card.className = 'card card-experiencias w-100';
 
             var cardImg = document.createElement('img');
             cardImg.className = 'card-img-top';
@@ -287,11 +290,11 @@ fetch('../../servicios-gestion-comunidades.json')
             cardImg.style.borderRadius = '20px 20px 0px 0px'
             //estilo
             card.style.width = '19rem';
-            card.style.height = '30rem';
+            //card.style.height = '30rem';
             card.style.margin = '10px auto';
 
             var cardBody = document.createElement('div');
-            cardBody.className = 'card-body';
+            cardBody.className = 'card-body d-flex flex-column';
 
             var cardTitle = document.createElement('h5');
             cardTitle.className = 'card-title';
@@ -302,7 +305,7 @@ fetch('../../servicios-gestion-comunidades.json')
             cardText.innerText = item.card.text;
 
             var btn = document.createElement('a');
-            btn.className = 'btn btn-primary';
+            btn.className = 'btn btn-primary mt-auto';
             btn.href = item.card.btnLink;
             btn.innerText = item.card.btnText;
 
@@ -333,7 +336,7 @@ fetch('../../servicios-gestion-comunidades.json')
                 cardColumn.className = 'col-12 col-md-6 col-lg-4 col-xl-3';
     
                 var card = document.createElement('div');
-                card.className = 'card';
+                card.className = 'card card-experiencias w-100';
     
                 var cardImg = document.createElement('img');
                 cardImg.className = 'card-img-top';
@@ -345,7 +348,7 @@ fetch('../../servicios-gestion-comunidades.json')
                 card.style.margin = '10px auto';
     
                 var cardBody = document.createElement('div');
-                cardBody.className = 'card-body';
+                cardBody.className = 'card-body d-flex flex-column';
     
                 var cardTitle = document.createElement('h5');
                 cardTitle.className = 'card-title';
@@ -360,7 +363,7 @@ fetch('../../servicios-gestion-comunidades.json')
                 cardText.innerText = item.card.text;
     
                 var btn = document.createElement('a');
-                btn.className = 'btn btn-primary';
+                btn.className = 'btn btn-primary mt-auto';
                 btn.href = item.card.btnLink;
                 btn.innerText = item.card.btnText;
     
