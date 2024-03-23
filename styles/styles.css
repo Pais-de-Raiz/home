@@ -456,6 +456,15 @@ h4 {
     margin: auto;
 }
 
+.carousel-item h4{
+    color: #98C79B;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #486656;
+}
+
+
 @media (min-width: 1178px) {
     .fixed-card {
         position: fixed;
