@@ -349,8 +349,8 @@ h4 {
 
 /*Estilos quotes section */
 .quote-img2 {
-    margin-left:-300px;
-    margin-top: -106px;
+    margin-left:-340px;
+    margin-top: 64px;
     position:absolute;
 }
 
@@ -464,6 +464,9 @@ h4 {
     background-color: #486656;
 }
 
+.quotes {
+    height: 570px;
+}
 
 @media (min-width: 1178px) {
     .fixed-card {
@@ -479,9 +482,13 @@ h4 {
 
 @media (max-width: 1200px) {
     .quote-img2 {
-        margin-left:-500px;
-        margin-top: -106px;
+        margin-left:-540px;
+        margin-top: 94px;
         position:absolute;
+    }
+
+    .quotes {
+        height: 600px;
     }
     
 }
