@@ -398,7 +398,7 @@ function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
                 cardColumn.className = 'col-12 col-md-6 col-lg-4 col-xl-3';
 
                 var card = document.createElement('div');
-                card.className = 'card';
+                card.className = 'card card-experiencias w-100';
 
                 var cardImg = document.createElement('img');
                 cardImg.className = 'card-img-top';
@@ -408,11 +408,11 @@ function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
 
                 // Estilo
                 card.style.width = '19rem';
-                card.style.height = '30rem';
+                //card.style.height = '30rem';
                 card.style.margin = '10px auto';
 
                 var cardBody = document.createElement('div');
-                cardBody.className = 'card-body';
+                cardBody.className = 'card-body d-flex flex-column';
 
                 var cardTitle = document.createElement('h5');
                 cardTitle.className = 'card-title';
@@ -423,7 +423,7 @@ function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
                 cardText.innerText = item.card.text;
 
                 var btn = document.createElement('a');
-                btn.className = 'btn btn-primary';
+                btn.className = 'btn btn-primary mt-auto';
                 btn.href = item.card.btnLink;
                 btn.innerText = item.card.btnText;
 
