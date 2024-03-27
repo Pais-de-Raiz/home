@@ -68,6 +68,11 @@ h4 {
     border: 2px solid;
 }
 
+.btn-success2 {
+    --bs-btn-bg: #b3d7cc;
+    width: 20rem
+}
+
 .btn-sm {
     --bs-btn-padding-x: 1.5rem;
 }
@@ -227,6 +232,7 @@ h4 {
     padding: 5px 0px 5px 0px;
     margin: auto;
     background-color: #292929;
+    width: 20rem
 }
 
 /* Estilos iconos */
@@ -424,6 +430,12 @@ h4 {
     border-radius: 20px;
     border: 3px solid #98C79B;
     padding:15px;
+
+}
+
+.detail-border{
+    border-left: 2px solid #e5e5e5;
+    border-right: 2px solid #e5e5e5;
 }
 
 .detail p {

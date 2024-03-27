@@ -489,7 +489,7 @@ function cargarTarjetasFiltradas2(jsonFile, codigo, contenedorId) {
                 cardImg.style.borderRadius = '20px 20px 0px 0px';
 
                 // Estilo
-                card.style.width = '18rem';
+                card.style.width = '20rem';
                 card.style.height = '300px';
                 card.style.margin = 'auto';
 
