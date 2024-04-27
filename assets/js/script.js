@@ -1,149 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Cargar el contenido del head.html en la sección con id "head"
-    var headContainer = document.getElementById('head');
-    var xhr = new XMLHttpRequest();
-    
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                headContainer.innerHTML = xhr.responseText;
-            } else {
-                console.error('Error al cargar head: ' + xhr.status);
+    // Función para cargar contenido HTML en un contenedor específico
+    function cargarContenido(url, contenedor) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    contenedor.innerHTML = xhr.responseText;
+                } else {
+                    console.error('Error al cargar contenido desde ' + url + ': ' + xhr.status);
+                }
             }
-        }
-    };
-    xhr.open('GET', "../../assets/partials/head.html", true);
-    xhr.send();
+        };
+        xhr.open('GET', url, true);
+        xhr.send();
+    }
+
+    // Cargar secciones HTML
+    cargarContenido("../../assets/partials/navbar.html", document.getElementById('navbar'));
+    cargarContenido("../../assets/partials/head.html", document.getElementById('head'));
+    cargarContenido("../../assets/partials/banner_comunidades.html", document.getElementById('banner-comunidades'));
+    cargarContenido("../../assets/partials/footer.html", document.getElementById('footer'));
+    cargarContenido("../../assets/partials/slider.html", document.getElementById('slider'));
+    cargarContenido("../../assets/partials/filosofia.html", document.getElementById('filosofia'));
+    cargarContenido("../../assets/partials/do.html", document.getElementById('do'));
+    cargarContenido("../../assets/partials/quotes.html", document.getElementById('quotes'));
+    cargarContenido("../../assets/partials/quotes.html", document.getElementById('quotes'));
+    // Puedes seguir agregando más llamadas a cargarContenido para cargar más secciones
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Cargar el contenido del head.html en la sección con id "Bannercomunidades"
-    var bannercomunidadesContainer = document.getElementById('banner-comunidades');
-    var xhr = new XMLHttpRequest();
-    
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                bannercomunidadesContainer.innerHTML = xhr.responseText;
-            } else {
-                console.error('Error al cargar banner comunidades: ' + xhr.status);
-            }
-        }
-    };
-    xhr.open('GET', '../../assets/partials/banner_comunidades.html', true);
-    xhr.send();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Cargar el contenido del footer.html en la sección con id "footer"
-    var navbarContainer = document.getElementById('navbar');
-    var xhr = new XMLHttpRequest();
-    
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                navbarContainer.innerHTML = xhr.responseText;
-            } else {
-                console.error('Error al cargar el navbar: ' + xhr.status);
-            }
-        }
-    };
-    xhr.open('GET', '../../assets/partials/navbar.html', true);
-    xhr.send();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Cargar el contenido del footer.html en la sección con id "footer"
-    var footerContainer = document.getElementById('footer');
-    var xhr = new XMLHttpRequest();
-    
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                footerContainer.innerHTML = xhr.responseText;
-
-                // Lógica adicional después de cargar el contenido
-                attachEventListeners();
-            } else {
-                console.error('Error al cargar el footer: ' + xhr.status);
-            }
-        }
-    };
-    xhr.open('GET', '../../assets/partials/footer.html', true);
-    xhr.send();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Cargar el contenido del slider.html en la sección con id "slider"
-    var sliderContainer = document.getElementById('slider');
-    var xhr = new XMLHttpRequest();
-    
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                sliderContainer.innerHTML = xhr.responseText;
-            } else {
-                console.error('Error al cargar el slider: ' + xhr.status);
-            }
-        }
-    };
-    xhr.open('GET', '../../assets/partials/slider.html', true);
-    xhr.send();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Cargar el contenido del filosofia.html en la sección con id "filosofia"
-    var filosofiaContainer = document.getElementById('filosofia');
-    var xhr = new XMLHttpRequest();
-    
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                filosofiaContainer.innerHTML = xhr.responseText;
-            } else {
-                console.error('Error al cargar filosofia: ' + xhr.status);
-            }
-        }
-    };
-    xhr.open('GET', '../../assets/partials/filosofia.html', true);
-    xhr.send();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Cargar el contenido del do.html en la sección con id "do"
-    var doContainer = document.getElementById('do');
-    var xhr = new XMLHttpRequest();
-    
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                doContainer.innerHTML = xhr.responseText;
-            } else {
-                console.error('Error al cargar do: ' + xhr.status);
-            }
-        }
-    };
-    xhr.open('GET', '../../assets/partials/do.html', true);
-    xhr.send();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Cargar el contenido del quotes.html en la sección con id "quotes"
-    var quotesContainer = document.getElementById('quotes');
-    var xhr = new XMLHttpRequest();
-    
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                quotesContainer.innerHTML = xhr.responseText;
-            } else {
-                console.error('Error al cargar quotes: ' + xhr.status);
-            }
-        }
-    };
-    xhr.open('GET', 'assets/partials/quotes.html', true);
-    xhr.send();
-});
 
 // Filtrar y mostrar servicios de "Voluntariado Experiencial" al cargar la página
 document.addEventListener('DOMContentLoaded', function () {
