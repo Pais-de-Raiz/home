@@ -288,6 +288,7 @@ fetch('../../servicios-gestion-comunidades.json')
             cardImg.src = item.card.imgSrc;
             cardImg.alt = item.card.imgAlt;
             cardImg.style.borderRadius = '20px 20px 0px 0px'
+            
             //estilo
             card.style.width = '19rem';
             //card.style.height = '30rem';
@@ -562,6 +563,7 @@ function cargarTarjetasFiltradas4(jsonFile, categoria, contenedorId) {
     fetch(jsonFile)
         .then(response => response.json())
         .then(data => {
+                    
             // Filtrar tarjetas con la fundación específica
             var tarjetasFiltradas = data.filter(item => item.card.categoria === categoria);
 
@@ -570,20 +572,23 @@ function cargarTarjetasFiltradas4(jsonFile, categoria, contenedorId) {
             cardColumn.className = 'col-12 col-md-6 col-lg-4 col-xl-3';
 
             var card = document.createElement('div');
-            card.className = 'card';
+            //ocupar ancho total 
+            card.className = 'card card-experiencias w-100';
 
             var cardImg = document.createElement('img');
             cardImg.className = 'card-img-top';
             cardImg.src = item.card.imgSrc;
             cardImg.alt = item.card.imgAlt;
             cardImg.style.borderRadius = '20px 20px 0px 0px'
+            
             //estilo
             card.style.width = '19rem';
-            card.style.height = '30rem';
+            //card.style.height = '30rem';
             card.style.margin = '10px auto';
 
             var cardBody = document.createElement('div');
-            cardBody.className = 'card-body';
+            //d-flex flex-column colocar boton sabr mas al final
+            cardBody.className = 'card-body d-flex flex-column';
 
             var cardTitle = document.createElement('h5');
             cardTitle.className = 'card-title';
@@ -594,7 +599,8 @@ function cargarTarjetasFiltradas4(jsonFile, categoria, contenedorId) {
             cardText.innerText = item.card.text;
 
             var btn = document.createElement('a');
-            btn.className = 'btn btn-primary';
+            //mt-auto colocar boton sabr mas al final
+            btn.className = 'btn btn-primary mt-auto';
             btn.href = item.card.btnLink;
             btn.innerText = item.card.btnText;
 
