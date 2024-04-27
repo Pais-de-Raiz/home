@@ -1,3 +1,4 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Funcion para la carga de archivos almacenado en partials para reutilizar los recursos
 document.addEventListener('DOMContentLoaded', function () {
     // Función para cargar contenido HTML en un contenedor específico
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Puedes seguir agregando más llamadas a cargarContenido para cargar más secciones
 });
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Función para la lectura de JSON y almacenarlo en una variable y colocarlos en id del html
 // Función para cargar tarjetas desde un archivo JSON a un contenedor específico
 function cargarTarjetasDesdeJSON(jsonFile, containerId) {
@@ -93,10 +94,92 @@ cargarTarjetasDesdeJSON('servicios-bienestar.json', 'servicios-bienestar');
 cargarTarjetasDesdeJSON('servicios-gestion-comunidades.json', 'servicios-gestion-comunidades');
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Función para cargar tarjetas filtradas por fundación desde un archivo JSON a un contenedor específico
+function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
+    var tarjetasContainer = document.getElementById(contenedorId);
+
+    fetch(jsonFile)
+        .then(response => response.json())
+        .then(data => {
+            // Filtrar tarjetas con la fundación específica
+            var tarjetasFiltradas = data.filter(item => item.card.fundacion === fundacion);
+
+            tarjetasFiltradas.forEach(item => {
+                var cardColumn = document.createElement('div');
+                var card = document.createElement('div');
+                var cardImg = document.createElement('img');
+                var cardBody = document.createElement('div');
+                var cardTitle = document.createElement('h5');
+                var cardText = document.createElement('p');
+                var btn = document.createElement('a');
+
+                cardColumn.className = 'col-12 col-md-6 col-lg-4 col-xl-3';
+                card.className = 'card card-experiencias w-100';
+                cardImg.className = 'card-img-top';
+                cardBody.className = 'card-body d-flex flex-column';
+                cardTitle.className = 'card-title';
+                cardText.className = 'card-text';
+                btn.className = 'btn btn-primary mt-auto';
+
+                cardImg.src = item.card.imgSrc;
+                cardImg.alt = item.card.imgAlt;
+                cardImg.style.borderRadius = '20px 20px 0px 0px';
+
+                card.style.width = '19rem';
+                card.style.margin = '10px auto';
+
+                cardTitle.innerText = item.card.title;
+                cardText.innerText = item.card.text;
+                btn.href = item.card.btnLink;
+                btn.innerText = item.card.btnText;
+
+                cardBody.appendChild(cardTitle);
+                cardBody.appendChild(cardText);
+                cardBody.appendChild(btn);
+
+                card.appendChild(cardImg);
+                card.appendChild(cardBody);
+
+                cardColumn.appendChild(card);
+
+                tarjetasContainer.appendChild(cardColumn);
+            });
+        })
+        .catch(error => console.error('Error al cargar el archivo JSON:', error));
+}
+
+// Lista de configuraciones para cargar las tarjetas
+var configuracionesTarjetas = [
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Biblioseo', contenedorId: 'servicios-biblioseo' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Debra Colombia', contenedorId: 'servicios-debra' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Mujeres de éxito', contenedorId: 'servicios-mujeres' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Corporación Centro Holístico', contenedorId: 'servicios-holistico' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Corporación Entrégate Colombia', contenedorId: 'servicios-entregate' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'CoimpactoB', contenedorId: 'servicios-coimpacto' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Hermanas del Padre Pío', contenedorId: 'servicios-hermanas' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Casa Ronald Mac Donald -Familias', contenedorId: 'servicios-mcdonald' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Quipu Ainy', contenedorId: 'servicios-quipu' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Humanos 3D', contenedorId: 'servicios-humanos' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'San Antonio', contenedorId: 'servicios-fsa' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Techo', contenedorId: 'servicios-techo' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Cartagena al 100%', contenedorId: 'servicios-cartagena' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Trabajando por amor', contenedorId: 'servicios-trabajando' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Samaritanos di Padre Pio', contenedorId: 'servicios-samaritanos' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Tu cultura', contenedorId: 'servicios-cultura' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundacion el Quemado', contenedorId: 'servicios-quemado' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundacion Bahia y Ecosistemas de Colombia', contenedorId: 'servicios-bahia' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación Apoyar', contenedorId: 'servicios-apoyar' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación alma perruna', contenedorId: 'servicios-perruna' }
+];
+
+// Llamada a la función para cargar las tarjetas después de 2 segundos de carga de la página
+setTimeout(function() {
+    configuracionesTarjetas.forEach(config => cargarTarjetasFiltradas(config.jsonFile, config.fundacion, config.contenedorId));
+}, 2000);
 
 
-
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Filtrar y mostrar servicios de "Voluntariado Experiencial" al cargar la página
 document.addEventListener('DOMContentLoaded', function () {
     filtrarServicios('voluntariado-experiencial');
@@ -170,88 +253,6 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 
         
-// Cargar tarjetas filtradas por fundacion:
-function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
-    var tarjetasContainer = document.getElementById(contenedorId);
-
-    fetch(jsonFile)
-        .then(response => response.json())
-        .then(data => {
-            // Filtrar tarjetas con la fundación específica
-            var tarjetasFiltradas = data.filter(item => item.card.fundacion === fundacion);
-
-            tarjetasFiltradas.forEach(item => {
-                var cardColumn = document.createElement('div');
-                cardColumn.className = 'col-12 col-md-6 col-lg-4 col-xl-3';
-
-                var card = document.createElement('div');
-                card.className = 'card card-experiencias w-100';
-
-                var cardImg = document.createElement('img');
-                cardImg.className = 'card-img-top';
-                cardImg.src = item.card.imgSrc;
-                cardImg.alt = item.card.imgAlt;
-                cardImg.style.borderRadius = '20px 20px 0px 0px';
-
-                // Estilo
-                card.style.width = '19rem';
-                //card.style.height = '30rem';
-                card.style.margin = '10px auto';
-
-                var cardBody = document.createElement('div');
-                cardBody.className = 'card-body d-flex flex-column';
-
-                var cardTitle = document.createElement('h5');
-                cardTitle.className = 'card-title';
-                cardTitle.innerText = item.card.title;
-
-                var cardText = document.createElement('p');
-                cardText.className = 'card-text';
-                cardText.innerText = item.card.text;
-
-                var btn = document.createElement('a');
-                btn.className = 'btn btn-primary mt-auto';
-                btn.href = item.card.btnLink;
-                btn.innerText = item.card.btnText;
-
-                cardBody.appendChild(cardTitle);
-                cardBody.appendChild(cardText);
-                cardBody.appendChild(btn);
-
-                card.appendChild(cardImg);
-                card.appendChild(cardBody);
-
-                cardColumn.appendChild(card);
-
-                tarjetasContainer.appendChild(cardColumn);
-            });
-        })
-        .catch(error => console.error('Error al cargar el archivo JSON:', error));
-}
-
-// Llamadas a la función para cargar tarjetas en diferentes contenedores y con diferentes fundaciones
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Biblioseo', 'servicios-biblioseo');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Debra Colombia', 'servicios-debra');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Mujeres de éxito', 'servicios-mujeres');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Corporación Centro Holístico', 'servicios-holistico');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Corporación Entrégate Colombia', 'servicios-entregate');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'CoimpactoB', 'servicios-coimpacto');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Hermanas del Padre Pío', 'servicios-hermanas');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Casa Ronald Mac Donald -Familias', 'servicios-mcdonald');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Quipu Ainy', 'servicios-quipu');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Humanos 3D ', 'servicios-humanos');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'San Antonio', 'servicios-fsa');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Techo', 'servicios-techo');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Cartagena al 100%', 'servicios-cartagena');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Trabajando por amor', 'servicios-trabajando');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Samaritanos di Padre Pio', 'servicios-samaritanos');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Tu cultura', 'servicios-cultura');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Fundacion el Quemado', 'servicios-quemado');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Fundacion Bahia y Ecosistemas de Colombia', 'servicios-bahia');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Fundación Apoyar', 'servicios-apoyar');
-cargarTarjetasFiltradas('../../servicios-voluntariado-experiencial.json', 'Fundación alma perruna', 'servicios-perruna');
-
-
 
 // Cargar tarjetas filtradas por servicio:
 function cargarTarjetasFiltradas2(jsonFile, codigo, contenedorId) {
@@ -453,9 +454,6 @@ function ocultarTodosLosDivs() {
         div.style.display = 'none';
     });
 }
-
-
-
 
 
 //FORMULARIO 
