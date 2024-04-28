@@ -1,3 +1,11 @@
+// Simula la carga de la página y oculta la pantalla de carga después de 2 segundos
+window.addEventListener('load', function() {
+    setTimeout(function() {
+      document.querySelector('.loader-wrapper').style.display = 'none';
+      document.querySelector('.content').style.display = 'block';
+    }, 1000);
+  });
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Funcion para la carga de archivos almacenado en partials para reutilizar los recursos
 document.addEventListener('DOMContentLoaded', function () {
