@@ -3,7 +3,7 @@ window.addEventListener('load', function() {
     setTimeout(function() {
       document.querySelector('.loader-wrapper').style.display = 'none';
       document.querySelector('.content').style.display = 'block';
-    }, 1000);
+    }, 2000);
   });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -24,18 +24,24 @@ document.addEventListener('DOMContentLoaded', function () {
         xhr.open('GET', url, true);
         xhr.send();
     }
-    // Cargar secciones HTML
+    
+    // Cargar el loader primero
     cargarContenido("../../assets/partials/loader.html", document.getElementById('loader'));
-    cargarContenido("../../assets/partials/navbar.html", document.getElementById('navbar'));
     cargarContenido("../../assets/partials/head.html", document.getElementById('head'));
-    cargarContenido("../../assets/partials/banner_comunidades.html", document.getElementById('banner-comunidades'));
-    cargarContenido("../../assets/partials/footer.html", document.getElementById('footer'));
-    cargarContenido("../../assets/partials/slider.html", document.getElementById('slider'));
-    cargarContenido("../../assets/partials/filosofia.html", document.getElementById('filosofia'));
-    cargarContenido("../../assets/partials/do.html", document.getElementById('do'));
-    cargarContenido("../../assets/partials/quotes.html", document.getElementById('quotes'));
-    // Puedes seguir agregando más llamadas a cargarContenido para cargar más secciones
+
+    // Luego, cargar las otras secciones después de un retraso
+    setTimeout(function() {
+        cargarContenido("../../assets/partials/navbar.html", document.getElementById('navbar'));
+        cargarContenido("../../assets/partials/banner_comunidades.html", document.getElementById('banner-comunidades'));
+        cargarContenido("../../assets/partials/footer.html", document.getElementById('footer'));
+        cargarContenido("../../assets/partials/slider.html", document.getElementById('slider'));
+        cargarContenido("../../assets/partials/filosofia.html", document.getElementById('filosofia'));
+        cargarContenido("../../assets/partials/do.html", document.getElementById('do'));
+        cargarContenido("../../assets/partials/quotes.html", document.getElementById('quotes'));
+        // Puedes seguir agregando más llamadas a cargarContenido para cargar más secciones
+    }, 1000); // Aquí especificamos un retraso de 500 milisegundos (0.5 segundos)
 });
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Función para la lectura de JSON y almacenarlo en una variable y colocarlos en id del html
@@ -315,8 +321,7 @@ function cargarTarjetasFiltradas2(jsonFile, codigo, contenedorId) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function() {
-        cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-001', 'servicio-exp-v-001');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-001', 'servicio-exp-v-001');
     cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-002', 'servicio-exp-v-002');
     cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-003', 'servicio-exp-v-003');
     cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-004', 'servicio-exp-v-004');
@@ -357,7 +362,6 @@ document.addEventListener("DOMContentLoaded", function() {
     cargarTarjetasFiltradas2('../../servicios-gestion-comunidades.json', 'exp-g-001', 'servicio-exp-g-001');
     cargarTarjetasFiltradas2('../../servicios-gestion-comunidades.json', 'exp-g-002', 'servicio-exp-g-002');
     cargarTarjetasFiltradas2('../../servicios-gestion-comunidades.json', 'exp-g-003', 'servicio-exp-g-003');
-    }, 1000); // 5000 milisegundos = 5 segundos
 });
 
 
@@ -527,4 +531,3 @@ function limpiarCampos() {
     $('#telefono').val('');
     $('#mensaje').val('');
 }
-
