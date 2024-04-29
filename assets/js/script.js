@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Cargar el loader primero
     cargarContenido("../../assets/partials/loader.html", document.getElementById('loader'));
     cargarContenido("../../assets/partials/head.html", document.getElementById('head'));
+    cargarContenido("../../assets/partials/navbar.html", document.getElementById('navbar'));
 
     // Luego, cargar las otras secciones después de un retraso
     setTimeout(function() {
-        cargarContenido("../../assets/partials/navbar.html", document.getElementById('navbar'));
         cargarContenido("../../assets/partials/banner_comunidades.html", document.getElementById('banner-comunidades'));
         cargarContenido("../../assets/partials/footer.html", document.getElementById('footer'));
         cargarContenido("../../assets/partials/slider.html", document.getElementById('slider'));
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cargarContenido("../../assets/partials/do.html", document.getElementById('do'));
         cargarContenido("../../assets/partials/quotes.html", document.getElementById('quotes'));
         // Puedes seguir agregando más llamadas a cargarContenido para cargar más secciones
-    }, 1000); // Aquí especificamos un retraso de 500 milisegundos (0.5 segundos)
+    }, 500); // Aquí especificamos un retraso de 500 milisegundos (0.5 segundos)
 });
 
 
