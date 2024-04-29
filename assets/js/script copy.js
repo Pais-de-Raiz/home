@@ -1,10 +1,3 @@
-// Simula la carga de la página y oculta la pantalla de carga después de 2 segundos
-window.addEventListener('load', function() {
-    setTimeout(function() {
-      document.querySelector('.loader-wrapper').style.display = 'none';
-      document.querySelector('.content').style.display = 'block';
-    }, 2000);
-  });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Funcion para la carga de archivos almacenado en partials para reutilizar los recursos
@@ -26,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
     // Cargar el loader primero
-    cargarContenido("../../assets/partials/loader.html", document.getElementById('loader'));
     cargarContenido("../../assets/partials/head.html", document.getElementById('head'));
+    cargarContenido("../../assets/partials/loader.html", document.getElementById('loader'));
     cargarContenido("../../assets/partials/navbar.html", document.getElementById('navbar'));
 
     // Luego, cargar las otras secciones después de un retraso
@@ -41,6 +34,15 @@ document.addEventListener('DOMContentLoaded', function () {
         // Puedes seguir agregando más llamadas a cargarContenido para cargar más secciones
     }, 500); // Aquí especificamos un retraso de 500 milisegundos (0.5 segundos)
 });
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Simula la carga de la página y oculta la pantalla de carga después de 2 segundos
+window.addEventListener('load', function() {
+    setTimeout(function() {
+      document.querySelector('.loader-wrapper').style.display = 'none';
+      document.querySelector('.content').style.display = 'block';
+    }, 2000);
+  });
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
