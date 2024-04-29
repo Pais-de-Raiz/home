@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
         xhr.open('GET', url, true);
         xhr.send();
     }
-
     // Cargar secciones HTML
+    cargarContenido("../../assets/partials/loader.html", document.getElementById('loader'));
     cargarContenido("../../assets/partials/navbar.html", document.getElementById('navbar'));
     cargarContenido("../../assets/partials/head.html", document.getElementById('head'));
     cargarContenido("../../assets/partials/banner_comunidades.html", document.getElementById('banner-comunidades'));
@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
     cargarContenido("../../assets/partials/filosofia.html", document.getElementById('filosofia'));
     cargarContenido("../../assets/partials/do.html", document.getElementById('do'));
     cargarContenido("../../assets/partials/quotes.html", document.getElementById('quotes'));
-    cargarContenido("../../assets/partials/loader.html", document.getElementById('loader'));
     // Puedes seguir agregando más llamadas a cargarContenido para cargar más secciones
 });
 
@@ -94,12 +93,18 @@ function cargarTarjetasDesdeJSON(jsonFile, containerId) {
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
-// Llamar a la función para cargar las tarjetas de voluntariado experiencial
-cargarTarjetasDesdeJSON('servicios-voluntariado-experiencial.json', 'servicios-voluntariado-experiencial');
-// Llamar a la función para cargar las tarjetas de Bienestar
-cargarTarjetasDesdeJSON('servicios-bienestar.json', 'servicios-bienestar');
-// Llamar a la función para cargar las tarjetas de Gestion de comunicades
-cargarTarjetasDesdeJSON('servicios-gestion-comunidades.json', 'servicios-gestion-comunidades');
+
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        // Llamar a la función para cargar las tarjetas de voluntariado experiencial
+        cargarTarjetasDesdeJSON('servicios-voluntariado-experiencial.json', 'servicios-voluntariado-experiencial');
+        // Llamar a la función para cargar las tarjetas de Bienestar
+        cargarTarjetasDesdeJSON('servicios-bienestar.json', 'servicios-bienestar');
+        // Llamar a la función para cargar las tarjetas de Gestión de comunidades
+        cargarTarjetasDesdeJSON('servicios-gestion-comunidades.json', 'servicios-gestion-comunidades');
+    }, 5000); // 5000 milisegundos = 5 segundos
+});
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -309,47 +314,55 @@ function cargarTarjetasFiltradas2(jsonFile, codigo, contenedorId) {
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-001', 'servicio-exp-v-001');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-002', 'servicio-exp-v-002');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-003', 'servicio-exp-v-003');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-004', 'servicio-exp-v-004');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-005', 'servicio-exp-v-005');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-006', 'servicio-exp-v-006');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-007', 'servicio-exp-v-007');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-008', 'servicio-exp-v-008');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-009', 'servicio-exp-v-009');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-010', 'servicio-exp-v-010');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-011', 'servicio-exp-v-011');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-012', 'servicio-exp-v-012');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-013', 'servicio-exp-v-013');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-014', 'servicio-exp-v-014');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-015', 'servicio-exp-v-015');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-016', 'servicio-exp-v-016');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-017', 'servicio-exp-v-017');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-018', 'servicio-exp-v-018');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-019', 'servicio-exp-v-019');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-020', 'servicio-exp-v-020');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-021', 'servicio-exp-v-021');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-022', 'servicio-exp-v-022');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-023', 'servicio-exp-v-023');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-024', 'servicio-exp-v-024');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-025', 'servicio-exp-v-025');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-026', 'servicio-exp-v-026');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-027', 'servicio-exp-v-027');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-028', 'servicio-exp-v-028');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-029', 'servicio-exp-v-029');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-030', 'servicio-exp-v-030');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-031', 'servicio-exp-v-031');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-032', 'servicio-exp-v-032');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-033', 'servicio-exp-v-033');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-034', 'servicio-exp-v-034');
-cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-035', 'servicio-exp-v-035');
-cargarTarjetasFiltradas2('../../servicios-bienestar.json', 'exp-b-001', 'servicio-exp-b-001');
-cargarTarjetasFiltradas2('../../servicios-bienestar.json', 'exp-b-002', 'servicio-exp-b-002');
-cargarTarjetasFiltradas2('../../servicios-bienestar.json', 'exp-b-003', 'servicio-exp-b-003');
-cargarTarjetasFiltradas2('../../servicios-gestion-comunidades.json', 'exp-g-001', 'servicio-exp-g-001');
-cargarTarjetasFiltradas2('../../servicios-gestion-comunidades.json', 'exp-g-002', 'servicio-exp-g-002');
-cargarTarjetasFiltradas2('../../servicios-gestion-comunidades.json', 'exp-g-003', 'servicio-exp-g-003');
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-001', 'servicio-exp-v-001');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-002', 'servicio-exp-v-002');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-003', 'servicio-exp-v-003');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-004', 'servicio-exp-v-004');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-005', 'servicio-exp-v-005');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-006', 'servicio-exp-v-006');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-007', 'servicio-exp-v-007');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-008', 'servicio-exp-v-008');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-009', 'servicio-exp-v-009');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-010', 'servicio-exp-v-010');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-011', 'servicio-exp-v-011');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-012', 'servicio-exp-v-012');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-013', 'servicio-exp-v-013');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-014', 'servicio-exp-v-014');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-015', 'servicio-exp-v-015');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-016', 'servicio-exp-v-016');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-017', 'servicio-exp-v-017');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-018', 'servicio-exp-v-018');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-019', 'servicio-exp-v-019');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-020', 'servicio-exp-v-020');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-021', 'servicio-exp-v-021');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-022', 'servicio-exp-v-022');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-023', 'servicio-exp-v-023');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-024', 'servicio-exp-v-024');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-025', 'servicio-exp-v-025');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-026', 'servicio-exp-v-026');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-027', 'servicio-exp-v-027');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-028', 'servicio-exp-v-028');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-029', 'servicio-exp-v-029');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-030', 'servicio-exp-v-030');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-031', 'servicio-exp-v-031');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-032', 'servicio-exp-v-032');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-033', 'servicio-exp-v-033');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-034', 'servicio-exp-v-034');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-035', 'servicio-exp-v-035');
+    cargarTarjetasFiltradas2('../../servicios-bienestar.json', 'exp-b-001', 'servicio-exp-b-001');
+    cargarTarjetasFiltradas2('../../servicios-bienestar.json', 'exp-b-002', 'servicio-exp-b-002');
+    cargarTarjetasFiltradas2('../../servicios-bienestar.json', 'exp-b-003', 'servicio-exp-b-003');
+    cargarTarjetasFiltradas2('../../servicios-gestion-comunidades.json', 'exp-g-001', 'servicio-exp-g-001');
+    cargarTarjetasFiltradas2('../../servicios-gestion-comunidades.json', 'exp-g-002', 'servicio-exp-g-002');
+    cargarTarjetasFiltradas2('../../servicios-gestion-comunidades.json', 'exp-g-003', 'servicio-exp-g-003');
+    }, 1000); // 5000 milisegundos = 5 segundos
+});
+
+
+
+
 
 // Cargar tarjetas filtradas por categoría:
 function cargarTarjetasFiltradas4(jsonFile, categoria, contenedorId) {
@@ -415,19 +428,22 @@ function cargarTarjetasFiltradas4(jsonFile, categoria, contenedorId) {
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
-cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Salud', 'servicio-salud');
-cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Educación infantil y Juvenil', 'servicio-educacion');
-cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Deporte', 'servicio-deporte');
-cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Seguridad Alimentaria', 'servicio-seguridadali');
-cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Discapacidad', 'servicio-discapacidad');
-cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Arte y Cultura', 'servicio-artecultura');
-cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Mejoramiento de Condiciones De Vida // Construcción de espacios dignos.', 'servicio-construccion');
-cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Cuidado Del Medio Ambiente', 'servicio-medioambiente');
-cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Cuidado del Adulto Mayor', 'servicio-adulto');
-cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Empoderamiento de las Mujeres', 'servicio-mujeres');
-cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Comunidad Indígena', 'servicio-comunidad');
-cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Paz Y Reconciliación', 'servicio-paz');
-cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Protección Animal', 'servicio-animal');
+
+document.addEventListener("DOMContentLoaded", function() {
+    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Salud', 'servicio-salud');
+    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Educación infantil y Juvenil', 'servicio-educacion');
+    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Deporte', 'servicio-deporte');
+    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Seguridad Alimentaria', 'servicio-seguridadali');
+    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Discapacidad', 'servicio-discapacidad');
+    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Arte y Cultura', 'servicio-artecultura');
+    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Mejoramiento de Condiciones De Vida // Construcción de espacios dignos.', 'servicio-construccion');
+    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Cuidado Del Medio Ambiente', 'servicio-medioambiente');
+    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Cuidado del Adulto Mayor', 'servicio-adulto');
+    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Empoderamiento de las Mujeres', 'servicio-mujeres');
+    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Comunidad Indígena', 'servicio-comunidad');
+    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Paz Y Reconciliación', 'servicio-paz');
+    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Protección Animal', 'servicio-animal');
+});
 
 
 
