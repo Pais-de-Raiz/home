@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     cargarContenido("../../assets/partials/filosofia.html", document.getElementById('filosofia'));
     cargarContenido("../../assets/partials/do.html", document.getElementById('do'));
     cargarContenido("../../assets/partials/quotes.html", document.getElementById('quotes'));
-    cargarContenido("../../assets/partials/quotes.html", document.getElementById('quotes'));
+    cargarContenido("../../assets/partials/loader.html", document.getElementById('loader'));
     // Puedes seguir agregando más llamadas a cargarContenido para cargar más secciones
 });
 
