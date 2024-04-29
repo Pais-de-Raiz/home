@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
         cargarTarjetasDesdeJSON('servicios-bienestar.json', 'servicios-bienestar');
         // Llamar a la función para cargar las tarjetas de Gestión de comunidades
         cargarTarjetasDesdeJSON('servicios-gestion-comunidades.json', 'servicios-gestion-comunidades');
-    }, 5000); // 5000 milisegundos = 5 segundos
+    }, 1000); // 5000 milisegundos = 5 segundos
 });
 
 
