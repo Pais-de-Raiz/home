@@ -131,7 +131,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Función para cargar tarjetas filtradas por fundación desde un archivo JSON a un contenedor específico
 function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
@@ -150,6 +149,8 @@ function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
                 var cardBody = document.createElement('div');
                 var cardTitle = document.createElement('h5');
                 var cardText = document.createElement('p');
+                var cardSubtitle = document.createElement('h6');
+                var cardImgfundation = document.createElement('img');
                 var btn = document.createElement('a');
 
                 cardColumn.className = 'col-12 col-md-6 col-lg-4 col-xl-3';
@@ -158,10 +159,14 @@ function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
                 cardBody.className = 'card-body d-flex flex-column';
                 cardTitle.className = 'card-title';
                 cardText.className = 'card-text';
+                cardSubtitle.className = 'card-cardSubtitle';
+                cardImgfundation.className = '';
                 btn.className = 'btn btn-primary mt-auto';
 
                 cardImg.src = item.card.imgSrc;
                 cardImg.alt = item.card.imgAlt;
+                cardImgfundation.src = item.card.logo;
+                cardImgfundation.alt = item.card.fundacion;
                 cardImg.style.borderRadius = '20px 20px 0px 0px';
 
                 card.style.width = '19rem';
@@ -169,11 +174,14 @@ function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
 
                 cardTitle.innerText = item.card.title;
                 cardText.innerText = item.card.text;
+                cardSubtitle.innerText = 'En alianza con:';
                 btn.href = item.card.btnLink;
                 btn.innerText = item.card.btnText;
 
                 cardBody.appendChild(cardTitle);
                 cardBody.appendChild(cardText);
+                cardBody.appendChild(cardSubtitle);
+                cardBody.appendChild(cardImgfundation);
                 cardBody.appendChild(btn);
 
                 card.appendChild(cardImg);

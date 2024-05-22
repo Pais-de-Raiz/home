@@ -626,7 +626,7 @@ h4 {
     }
 
     .card-experiencias {
-        height: 40rem;
+        height: 62rem;
     }
 
     
@@ -688,7 +688,7 @@ h4 {
     }
 
     .card-experiencias {
-        height: 30rem;
+        height: 49rem;
     }
 
 }
@@ -696,6 +696,6 @@ h4 {
 
 @media (max-width: 400px) {
     .card-experiencias {
-        height: 27rem;
+        height: 38rem;
     }
 }
