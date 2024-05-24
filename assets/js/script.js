@@ -261,6 +261,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 cardImg.style.borderRadius = '20px 20px 0px 0px'
                 //estilo
                 card.style.width = '18rem';
+                card.style.height = 'rem';
                 card.style.margin = '10px auto';
     
                 var cardBody = document.createElement('div');
@@ -277,6 +278,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 var cardText = document.createElement('p');
                 cardText.className = 'card-text';
                 cardText.innerText = item.card.text;
+
+                var cardSubtitle = document.createElement('h6');
+                cardSubtitle.className = 'card-cardSubtitle';
+                cardSubtitle.innerText = 'En alianza con:';
+
+                var cardImgfundation = document.createElement('img');
+                cardImgfundation.className = '';
+                cardImgfundation.src = item.card.logo;
+                cardImgfundation.alt = item.card.fundacion;
     
                 var btn = document.createElement('a');
                 btn.className = 'btn btn-primary mt-auto';
@@ -286,6 +296,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 cardBody.appendChild(cardTitle);
                 cardBody.appendChild(cardLocation);
                 cardBody.appendChild(cardText);
+                cardBody.appendChild(cardSubtitle);
+                cardBody.appendChild(cardImgfundation);
                 cardBody.appendChild(btn);
     
                 card.appendChild(cardImg);
@@ -437,6 +449,15 @@ function cargarTarjetasFiltradas4(jsonFile, categoria, contenedorId) {
             cardText.className = 'card-text';
             cardText.innerText = item.card.text;
 
+            var cardSubtitle = document.createElement('h6');
+            cardSubtitle.className = 'card-cardSubtitle';
+            cardSubtitle.innerText = 'En alianza con:';
+
+            var cardImgfundation = document.createElement('img');
+            cardImgfundation.className = '';
+            cardImgfundation.src = item.card.logo;
+            cardImgfundation.alt = item.card.fundacion;
+
             var btn = document.createElement('a');
             //mt-auto colocar boton sabr mas al final
             btn.className = 'btn btn-primary mt-auto';
@@ -445,6 +466,8 @@ function cargarTarjetasFiltradas4(jsonFile, categoria, contenedorId) {
 
             cardBody.appendChild(cardTitle);
             cardBody.appendChild(cardText);
+            cardBody.appendChild(cardSubtitle);
+            cardBody.appendChild(cardImgfundation);
             cardBody.appendChild(btn);
 
             card.appendChild(cardImg);
