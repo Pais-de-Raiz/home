@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 cardColumn.className = 'col-12 col-md-6 col-lg-4 col-xl-3';
     
                 var card = document.createElement('div');
-                card.className = 'card card-experiencias w-100';
+                card.className = 'card card-fundaciones w-100';
     
                 var cardImg = document.createElement('img');
                 cardImg.className = 'card-img-top';
