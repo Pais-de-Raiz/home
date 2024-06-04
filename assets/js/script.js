@@ -384,6 +384,11 @@ document.addEventListener("DOMContentLoaded", function() {
     cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-033', 'servicio-exp-v-033');
     cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-034', 'servicio-exp-v-034');
     cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-035', 'servicio-exp-v-035');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-036', 'servicio-exp-v-036');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-037', 'servicio-exp-v-037');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-038', 'servicio-exp-v-038');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-039', 'servicio-exp-v-039');
+    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-040', 'servicio-exp-v-040');
     cargarTarjetasFiltradas2('../../servicios-bienestar.json', 'exp-b-001', 'servicio-exp-b-001');
     cargarTarjetasFiltradas2('../../servicios-bienestar.json', 'exp-b-002', 'servicio-exp-b-002');
     cargarTarjetasFiltradas2('../../servicios-bienestar.json', 'exp-b-003', 'servicio-exp-b-003');
