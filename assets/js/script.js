@@ -216,7 +216,8 @@ var configuracionesTarjetas = [
     { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundacion el Quemado', contenedorId: 'servicios-quemado' },
     { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundacion Bahia y Ecosistemas de Colombia', contenedorId: 'servicios-bahia' },
     { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación Apoyar', contenedorId: 'servicios-apoyar' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación alma perruna', contenedorId: 'servicios-perruna' }
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación alma perruna', contenedorId: 'servicios-perruna' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación Red de Árboles', contenedorId: 'servicios-arboles' }
 ];
 
 // Llamada a la función para cargar las tarjetas después de 2 segundos de carga de la página
@@ -396,9 +397,6 @@ document.addEventListener("DOMContentLoaded", function() {
     cargarTarjetasFiltradas2('../../servicios-gestion-comunidades.json', 'exp-g-002', 'servicio-exp-g-002');
     cargarTarjetasFiltradas2('../../servicios-gestion-comunidades.json', 'exp-g-003', 'servicio-exp-g-003');
 });
-
-
-
 
 
 // Cargar tarjetas filtradas por categoría:
