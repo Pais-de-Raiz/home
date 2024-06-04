@@ -217,7 +217,9 @@ var configuracionesTarjetas = [
     { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundacion Bahia y Ecosistemas de Colombia', contenedorId: 'servicios-bahia' },
     { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación Apoyar', contenedorId: 'servicios-apoyar' },
     { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación alma perruna', contenedorId: 'servicios-perruna' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación Red de Árboles', contenedorId: 'servicios-arboles' }
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación Red de Árboles', contenedorId: 'servicios-arboles' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación Pan Para un Abuelo', contenedorId: 'servicios-pan' },
+    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación Asilo de Abuelos Fundasab', contenedorId: 'servicios-fundasab' },
 ];
 
 // Llamada a la función para cargar las tarjetas después de 2 segundos de carga de la página
