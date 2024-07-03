@@ -1,3 +1,19 @@
+const ServiciosBienestar = "https://raw.githubusercontent.com/Pais-de-Raiz/backend/main/servicios-bienestar.json";
+const VoluntariadoExperiencial = "https://raw.githubusercontent.com/Pais-de-Raiz/backend/main/servicios-voluntariado-experiencial.json";
+const GestionComunidades = "https://raw.githubusercontent.com/Pais-de-Raiz/backend/main/servicios-gestion-comunidades.json";
+const Fundaciones = "https://raw.githubusercontent.com/Pais-de-Raiz/backend/main/fundaciones-cards.json";
+
+// Luego puedes usar la variable 'url' donde necesites en tu código
+fetch(ServiciosBienestar)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+
 // Esperar 2 segundos antes de mostrar la sección
 setTimeout(function() {
     var loaderSection = document.getElementById('contenido');
@@ -122,11 +138,11 @@ function cargarTarjetasDesdeJSON(jsonFile, containerId) {
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         // Llamar a la función para cargar las tarjetas de voluntariado experiencial
-        cargarTarjetasDesdeJSON('https://raw.githubusercontent.com/Pais-de-Raiz/backend/main/servicios-voluntariado-experiencial.json', 'servicios-voluntariado-experiencial');
+        cargarTarjetasDesdeJSON(VoluntariadoExperiencial, 'servicios-voluntariado-experiencial');
         // Llamar a la función para cargar las tarjetas de Bienestar
-        cargarTarjetasDesdeJSON('https://raw.githubusercontent.com/Pais-de-Raiz/backend/main/servicios-bienestar.json', 'servicios-bienestar');
+        cargarTarjetasDesdeJSON(ServiciosBienestar, 'servicios-bienestar');
         // Llamar a la función para cargar las tarjetas de Gestión de comunidades
-        cargarTarjetasDesdeJSON('https://raw.githubusercontent.com/Pais-de-Raiz/backend/main/servicios-gestion-comunidades.json', 'servicios-gestion-comunidades');
+        cargarTarjetasDesdeJSON(GestionComunidades, 'servicios-gestion-comunidades');
     }, 1000); // 5000 milisegundos = 5 segundos
 });
 
@@ -197,31 +213,31 @@ function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
 
 // Lista de configuraciones para cargar las tarjetas
 var configuracionesTarjetas = [
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Biblioseo', contenedorId: 'servicios-biblioseo' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Debra Colombia', contenedorId: 'servicios-debra' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Mujeres de éxito', contenedorId: 'servicios-mujeres' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Corporación Centro Holístico', contenedorId: 'servicios-holistico' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Corporación Entrégate Colombia', contenedorId: 'servicios-entregate' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'CoimpactoB', contenedorId: 'servicios-coimpacto' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Hermanas del Padre Pío', contenedorId: 'servicios-hermanas' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Casa Ronald Mac Donald -Familias', contenedorId: 'servicios-mcdonald' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Quipu Ainy', contenedorId: 'servicios-quipu' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Humanos 3D', contenedorId: 'servicios-humanos' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'San Antonio', contenedorId: 'servicios-fsa' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Techo', contenedorId: 'servicios-techo' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Cartagena al 100%', contenedorId: 'servicios-cartagena' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Trabajando por amor', contenedorId: 'servicios-trabajando' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Samaritanos di Padre Pio', contenedorId: 'servicios-samaritanos' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Tu cultura', contenedorId: 'servicios-cultura' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundacion el Quemado', contenedorId: 'servicios-quemado' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundacion Bahia y Ecosistemas de Colombia', contenedorId: 'servicios-bahia' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación Apoyar', contenedorId: 'servicios-apoyar' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación alma perruna', contenedorId: 'servicios-perruna' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación Red de Árboles', contenedorId: 'servicios-arboles' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación Pan Para un Abuelo', contenedorId: 'servicios-pan' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Fundación Asilo de Abuelos Fundasab', contenedorId: 'servicios-fundasab' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Club Héroes de Honor', contenedorId: 'servicios-clubheroes' },
-    { jsonFile: '../../servicios-voluntariado-experiencial.json', fundacion: 'Aporte al Deporte', contenedorId: 'servicios-aportealdeporte' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Biblioseo', contenedorId: 'servicios-biblioseo' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Debra Colombia', contenedorId: 'servicios-debra' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Mujeres de éxito', contenedorId: 'servicios-mujeres' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Corporación Centro Holístico', contenedorId: 'servicios-holistico' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Corporación Entrégate Colombia', contenedorId: 'servicios-entregate' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'CoimpactoB', contenedorId: 'servicios-coimpacto' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Hermanas del Padre Pío', contenedorId: 'servicios-hermanas' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Casa Ronald Mac Donald -Familias', contenedorId: 'servicios-mcdonald' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Quipu Ainy', contenedorId: 'servicios-quipu' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Humanos 3D', contenedorId: 'servicios-humanos' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'San Antonio', contenedorId: 'servicios-fsa' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Techo', contenedorId: 'servicios-techo' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Cartagena al 100%', contenedorId: 'servicios-cartagena' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Trabajando por amor', contenedorId: 'servicios-trabajando' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Samaritanos di Padre Pio', contenedorId: 'servicios-samaritanos' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Tu cultura', contenedorId: 'servicios-cultura' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Fundacion el Quemado', contenedorId: 'servicios-quemado' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Fundacion Bahia y Ecosistemas de Colombia', contenedorId: 'servicios-bahia' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Fundación Apoyar', contenedorId: 'servicios-apoyar' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Fundación alma perruna', contenedorId: 'servicios-perruna' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Fundación Red de Árboles', contenedorId: 'servicios-arboles' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Fundación Pan Para un Abuelo', contenedorId: 'servicios-pan' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Fundación Asilo de Abuelos Fundasab', contenedorId: 'servicios-fundasab' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Club Héroes de Honor', contenedorId: 'servicios-clubheroes' },
+    { jsonFile: VoluntariadoExperiencial, fundacion: 'Aporte al Deporte', contenedorId: 'servicios-aportealdeporte' },
 ];
 
 // Llamada a la función para cargar las tarjetas después de 2 segundos de carga de la página
@@ -249,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function () {
  // Alistamiento de .JSON
     var fundacionesContainer = document.getElementById('fundaciones-container');
 
-    fetch('../../fundaciones-cards.json')
+    fetch(Fundaciones)
         .then(response => response.json())
         .then(data => {
             data.forEach(item => {
@@ -354,52 +370,52 @@ function cargarTarjetasFiltradas2(jsonFile, codigo, contenedorId) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-001', 'servicio-exp-v-001');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-002', 'servicio-exp-v-002');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-003', 'servicio-exp-v-003');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-004', 'servicio-exp-v-004');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-005', 'servicio-exp-v-005');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-006', 'servicio-exp-v-006');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-007', 'servicio-exp-v-007');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-008', 'servicio-exp-v-008');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-009', 'servicio-exp-v-009');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-010', 'servicio-exp-v-010');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-011', 'servicio-exp-v-011');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-012', 'servicio-exp-v-012');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-013', 'servicio-exp-v-013');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-014', 'servicio-exp-v-014');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-015', 'servicio-exp-v-015');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-016', 'servicio-exp-v-016');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-017', 'servicio-exp-v-017');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-018', 'servicio-exp-v-018');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-019', 'servicio-exp-v-019');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-020', 'servicio-exp-v-020');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-021', 'servicio-exp-v-021');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-022', 'servicio-exp-v-022');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-023', 'servicio-exp-v-023');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-024', 'servicio-exp-v-024');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-025', 'servicio-exp-v-025');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-026', 'servicio-exp-v-026');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-027', 'servicio-exp-v-027');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-028', 'servicio-exp-v-028');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-029', 'servicio-exp-v-029');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-030', 'servicio-exp-v-030');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-031', 'servicio-exp-v-031');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-032', 'servicio-exp-v-032');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-033', 'servicio-exp-v-033');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-034', 'servicio-exp-v-034');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-035', 'servicio-exp-v-035');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-036', 'servicio-exp-v-036');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-037', 'servicio-exp-v-037');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-038', 'servicio-exp-v-038');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-039', 'servicio-exp-v-039');
-    cargarTarjetasFiltradas2('../../servicios-voluntariado-experiencial.json', 'exp-v-040', 'servicio-exp-v-040');
-    cargarTarjetasFiltradas2('../../servicios-bienestar.json', 'exp-b-001', 'servicio-exp-b-001');
-    cargarTarjetasFiltradas2('../../servicios-bienestar.json', 'exp-b-002', 'servicio-exp-b-002');
-    cargarTarjetasFiltradas2('../../servicios-bienestar.json', 'exp-b-003', 'servicio-exp-b-003');
-    cargarTarjetasFiltradas2('../../servicios-gestion-comunidades.json', 'exp-g-001', 'servicio-exp-g-001');
-    cargarTarjetasFiltradas2('../../servicios-gestion-comunidades.json', 'exp-g-002', 'servicio-exp-g-002');
-    cargarTarjetasFiltradas2('../../servicios-gestion-comunidades.json', 'exp-g-003', 'servicio-exp-g-003');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-001', 'servicio-exp-v-001');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-002', 'servicio-exp-v-002');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-003', 'servicio-exp-v-003');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-004', 'servicio-exp-v-004');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-005', 'servicio-exp-v-005');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-006', 'servicio-exp-v-006');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-007', 'servicio-exp-v-007');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-008', 'servicio-exp-v-008');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-009', 'servicio-exp-v-009');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-010', 'servicio-exp-v-010');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-011', 'servicio-exp-v-011');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-012', 'servicio-exp-v-012');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-013', 'servicio-exp-v-013');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-014', 'servicio-exp-v-014');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-015', 'servicio-exp-v-015');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-016', 'servicio-exp-v-016');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-017', 'servicio-exp-v-017');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-018', 'servicio-exp-v-018');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-019', 'servicio-exp-v-019');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-020', 'servicio-exp-v-020');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-021', 'servicio-exp-v-021');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-022', 'servicio-exp-v-022');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-023', 'servicio-exp-v-023');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-024', 'servicio-exp-v-024');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-025', 'servicio-exp-v-025');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-026', 'servicio-exp-v-026');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-027', 'servicio-exp-v-027');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-028', 'servicio-exp-v-028');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-029', 'servicio-exp-v-029');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-030', 'servicio-exp-v-030');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-031', 'servicio-exp-v-031');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-032', 'servicio-exp-v-032');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-033', 'servicio-exp-v-033');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-034', 'servicio-exp-v-034');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-035', 'servicio-exp-v-035');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-036', 'servicio-exp-v-036');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-037', 'servicio-exp-v-037');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-038', 'servicio-exp-v-038');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-039', 'servicio-exp-v-039');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-040', 'servicio-exp-v-040');
+    cargarTarjetasFiltradas2(ServiciosBienestar, 'exp-b-001', 'servicio-exp-b-001');
+    cargarTarjetasFiltradas2(ServiciosBienestar, 'exp-b-002', 'servicio-exp-b-002');
+    cargarTarjetasFiltradas2(ServiciosBienestar, 'exp-b-003', 'servicio-exp-b-003');
+    cargarTarjetasFiltradas2(GestionComunidades, 'exp-g-001', 'servicio-exp-g-001');
+    cargarTarjetasFiltradas2(GestionComunidades, 'exp-g-002', 'servicio-exp-g-002');
+    cargarTarjetasFiltradas2(GestionComunidades, 'exp-g-003', 'servicio-exp-g-003');
 });
 
 
@@ -480,19 +496,19 @@ function cargarTarjetasFiltradas4(jsonFile, categoria, contenedorId) {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Salud', 'servicio-salud');
-    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Educación infantil y Juvenil', 'servicio-educacion');
-    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Deporte', 'servicio-deporte');
-    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Seguridad Alimentaria', 'servicio-seguridadali');
-    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Discapacidad', 'servicio-discapacidad');
-    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Arte y Cultura', 'servicio-artecultura');
-    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Mejoramiento de Condiciones De Vida // Construcción de espacios dignos.', 'servicio-construccion');
-    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Cuidado Del Medio Ambiente', 'servicio-medioambiente');
-    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Cuidado del Adulto Mayor', 'servicio-adulto');
-    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Empoderamiento de las Mujeres', 'servicio-mujeres');
-    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Comunidad Indígena', 'servicio-comunidad');
-    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Paz Y Reconciliación', 'servicio-paz');
-    cargarTarjetasFiltradas4('../../servicios-voluntariado-experiencial.json', 'Protección Animal', 'servicio-animal');
+    cargarTarjetasFiltradas4(VoluntariadoExperiencial, 'Salud', 'servicio-salud');
+    cargarTarjetasFiltradas4(VoluntariadoExperiencial, 'Educación infantil y Juvenil', 'servicio-educacion');
+    cargarTarjetasFiltradas4(VoluntariadoExperiencial, 'Deporte', 'servicio-deporte');
+    cargarTarjetasFiltradas4(VoluntariadoExperiencial, 'Seguridad Alimentaria', 'servicio-seguridadali');
+    cargarTarjetasFiltradas4(VoluntariadoExperiencial, 'Discapacidad', 'servicio-discapacidad');
+    cargarTarjetasFiltradas4(VoluntariadoExperiencial, 'Arte y Cultura', 'servicio-artecultura');
+    cargarTarjetasFiltradas4(VoluntariadoExperiencial, 'Mejoramiento de Condiciones De Vida // Construcción de espacios dignos.', 'servicio-construccion');
+    cargarTarjetasFiltradas4(VoluntariadoExperiencial, 'Cuidado Del Medio Ambiente', 'servicio-medioambiente');
+    cargarTarjetasFiltradas4(VoluntariadoExperiencial, 'Cuidado del Adulto Mayor', 'servicio-adulto');
+    cargarTarjetasFiltradas4(VoluntariadoExperiencial, 'Empoderamiento de las Mujeres', 'servicio-mujeres');
+    cargarTarjetasFiltradas4(VoluntariadoExperiencial, 'Comunidad Indígena', 'servicio-comunidad');
+    cargarTarjetasFiltradas4(VoluntariadoExperiencial, 'Paz Y Reconciliación', 'servicio-paz');
+    cargarTarjetasFiltradas4(VoluntariadoExperiencial, 'Protección Animal', 'servicio-animal');
 });
 
 
