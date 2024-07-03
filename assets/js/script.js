@@ -122,11 +122,11 @@ function cargarTarjetasDesdeJSON(jsonFile, containerId) {
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         // Llamar a la función para cargar las tarjetas de voluntariado experiencial
-        cargarTarjetasDesdeJSON('servicios-voluntariado-experiencial.json', 'servicios-voluntariado-experiencial');
+        cargarTarjetasDesdeJSON('https://raw.githubusercontent.com/Pais-de-Raiz/backend/main/servicios-voluntariado-experiencial.json', 'servicios-voluntariado-experiencial');
         // Llamar a la función para cargar las tarjetas de Bienestar
-        cargarTarjetasDesdeJSON('servicios-bienestar.json', 'servicios-bienestar');
+        cargarTarjetasDesdeJSON('https://raw.githubusercontent.com/Pais-de-Raiz/backend/main/servicios-bienestar.json', 'servicios-bienestar');
         // Llamar a la función para cargar las tarjetas de Gestión de comunidades
-        cargarTarjetasDesdeJSON('servicios-gestion-comunidades.json', 'servicios-gestion-comunidades');
+        cargarTarjetasDesdeJSON('https://raw.githubusercontent.com/Pais-de-Raiz/backend/main/servicios-gestion-comunidades.json', 'servicios-gestion-comunidades');
     }, 1000); // 5000 milisegundos = 5 segundos
 });
 
