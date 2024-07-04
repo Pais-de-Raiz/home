@@ -70,7 +70,7 @@ for row in data:
     )
     
     # Guardar el contenido HTML en un archivo dentro de la carpeta experiencia-detalle
-    with open(f"/{codigo}.html", "w") as f:
+    with open(f"{codigo}.html", "w") as f:
         f.write(html_content)
 
 print("Documentos HTML generados con éxito.")
