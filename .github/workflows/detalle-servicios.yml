@@ -35,6 +35,10 @@ jobs:
         run: |
           python test.py # Ejecuta tu script Python
 
+      - name: List generated files
+        run: |
+          ls -la experiencia-detalle # Lista los archivos en la carpeta experiencia-detalle
+
       - name: Check for changes and push
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
