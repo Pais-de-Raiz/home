@@ -25,15 +25,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # Asegúrate de tener un archivo requirements.txt con tus dependencias
 
-      - name: Create credentials directory
-        run: |
-          mkdir -p credentials  # Crea el directorio credentials si no existe
-
       - name: Set up Google Sheets credentials
         env:
           GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}
         run: |
-          echo "${GOOGLE_SHEETS_CREDENTIALS}" > credentials/paisderaiz-69356bcc0aad.json  # Guarda las credenciales
+          echo "${GOOGLE_SHEETS_CREDENTIALS}" > client_secrets.json  # Guarda las credenciales
 
       - name: Run Python script
         run: |
@@ -45,18 +41,10 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          
-          # Compara los archivos generados con los archivos existentes
-          CHANGED=false
-          for file in experiencia-detalle/*.html; do
-            if [ -n "$(git diff --name-only "$file")" ]; then
-              git add "$file"
-              CHANGED=true
-            fi
-          done
-
-          # Si hay cambios, realiza commit y push
-          if [ "$CHANGED" = true ]; then
+          # Agrega los archivos generados
+          git add experiencia-detalle/*.html
+          # Compara los cambios entre los archivos generados y los existentes
+          if [ -n "$(git diff --name-only)" ]; then
             git commit -m 'Update HTML files from Google Sheets'
             git push https://x-access-token:${GH_PAT}@github.com/Pais-de-Raiz/backend.git HEAD:main
           else
