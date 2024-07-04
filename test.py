@@ -1,16 +1,29 @@
+import json
 import gspread
+from google.oauth2.service_account import Credentials
 from jinja2 import Environment, FileSystemLoader
 import os  # Importar el módulo os para trabajar con archivos y directorios
 
-#---------Permisos archivo drive
-# Ruta al archivo JSON de credenciales descargado
-credenciales = 'credentials/paisderaiz-69356bcc0aad.json'
+# Define los ámbitos necesarios para acceder a Google Sheets y Google Drive
+scopes = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.readonly"
+]
 
-# ID del documento de Google Sheets
+# Lee las credenciales desde el archivo client_secrets.json
+with open('client_secrets.json') as f:
+    creds_dict = json.load(f)  # Asegúrate de que el archivo tiene un JSON válido
+
+creds = Credentials.from_service_account_info(creds_dict, scopes=scopes)
+gc = gspread.authorize(creds)
+
+# Abre tu hoja de cálculo por su ID
 id_documento = '1LlilYZIDVp4al8WGNr1sdZg-OuQW6jSK5zii6zHAVwU'
+sh = gc.open_by_key(id_documento)
 
-# Autenticación
-gc = gspread.service_account(filename=credenciales)
+# Tu lógica aquí...
+hoja_de_calculo = gc.open_by_key(id_documento)
+hoja = hoja_de_calculo.sheet1  # Puedes cambiar el nombre de la hoja si es necesario
 
 # Solicitud de acceso a documento
 hoja_de_calculo = gc.open_by_key(id_documento)
