@@ -26,6 +26,10 @@ pestaña = hoja_de_calculo.worksheet(nombre_de_la_pestaña)
 # Obtener todos los datos de la hoja
 data = pestaña.get_all_records()
 
+# Imprime los datos para verificar
+print("Datos obtenidos de Google Sheets:")
+print(data)
+
 # Configurar Jinja2
 env = Environment(loader=FileSystemLoader('.'))
 template = env.get_template('template.html')
@@ -67,7 +71,11 @@ for row in data:
         titulo_largo=titulo_largo,
         descripcion_1=descripcion_1  # Pasamos el texto con <br> a la plantilla
     )
-    
+
+    # Verifica el contenido HTML generado
+    print(f"Contenido HTML para {codigo}.html:")
+    print(html_content)
+
     # Guardar el contenido HTML en un archivo en la raíz del proyecto
     file_path = f"{codigo}.html"
     
