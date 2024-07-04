@@ -29,37 +29,21 @@ jobs:
         env:
           GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}
         run: |
-          echo "${GOOGLE_SHEETS_CREDENTIALS}" > client_secrets.json  # Guarda las credenciales
+          echo "${GOOGLE_SHEETS_CREDENTIALS}" > client_secrets.json
 
       - name: Run Python script
         run: |
           python test.py # Ejecuta tu script Python
 
-      - name: List generated files
-        run: |
-          ls -la experiencia-detalle # Lista los archivos en la carpeta experiencia-detalle
-
-      - name: Commit and push changes
+      - name: Check for changes and push
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-          CHANGED=false
-
-          if [ -n "$(git diff --name-only *.html)" ]; then
-            git add *.html
-            CHANGED=true
-          fi
-
-          if [ "$CHANGED" = true ]; then
-            git stash
-            git pull --rebase https://x-access-token:${GH_PAT}@github.com/Pais-de-Raiz/home.git main
-            git stash pop
-            git add *.html
-            git commit -m 'Update serveis datails'
-            git push https://x-access-token:${GH_PAT}@github.com/Pais-de-Raiz/home.git HEAD:main
+          git add *.html
+          if [ -n "$(git diff --cached --name-only)" ]; then
+            git commit -m 'Update HTML files from Google Sheets'
+            git push https://x-access-token:${GH_PAT}@github.com/${{ github.repository }} HEAD:main
           else
             echo "No changes to commit."
-          fi
