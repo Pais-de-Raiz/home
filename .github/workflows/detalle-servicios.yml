@@ -39,17 +39,26 @@ jobs:
         run: |
           ls -la experiencia-detalle # Lista los archivos en la carpeta experiencia-detalle
 
-      - name: Check for changes and push
+      - name: Commit and push changes
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          # Agrega los archivos generados
-          git add experiencia-detalle/*.html
-          # Compara los cambios entre los archivos generados y los existentes
-          if [ -n "$(git diff --name-only experiencia-detalle/*.html)" ]; then
-            git commit -m 'Update HTML files from Google Sheets'
+
+          CHANGED=false
+
+          if [ -n "$(git diff --name-only *.html)" ]; then
+            git add *.html
+            CHANGED=true
+          fi
+
+          if [ "$CHANGED" = true ]; then
+            git stash
+            git pull --rebase https://x-access-token:${GH_PAT}@github.com/Pais-de-Raiz/home.git main
+            git stash pop
+            git add *.html
+            git commit -m 'Update serveis datails'
             git push https://x-access-token:${GH_PAT}@github.com/Pais-de-Raiz/home.git HEAD:main
           else
             echo "No changes to commit."
