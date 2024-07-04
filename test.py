@@ -26,13 +26,13 @@ pestaña = hoja_de_calculo.worksheet(nombre_de_la_pestaña)
 # Obtener todos los datos de la hoja
 data = pestaña.get_all_records()
 
-# Imprime los datos para verificar
-print("Datos obtenidos de Google Sheets:")
-print(data)
-
 # Configurar Jinja2
 env = Environment(loader=FileSystemLoader('.'))
 template = env.get_template('template.html')
+
+# Crear carpeta experiencia-detalle si no existe
+if not os.path.exists('experiencia-detalle'):
+    os.makedirs('experiencia-detalle')
 
 # Lista para almacenar los nombres de los archivos generados
 archivos_generados = []
@@ -42,7 +42,7 @@ for row in data:
     codigo = row['codigo']
     nombre_servicio = row['experiencia']
     capacidad = row['capacidad']
-    cantidad = row['cantidad']  # Se lee el campo cantidad, pero no se usa en el HTML
+    cantidad = row['cantidad']
     unidad = row['unidad']
     modalidad = row['modalidad']
     url_reserva = row['URL de Reserva']
@@ -60,7 +60,7 @@ for row in data:
     
     # Renderizar la plantilla con los datos de la fila
     html_content = template.render(
-        id_servicio=id_servicio,  # Agregamos este dato a la plantilla
+        id_servicio=id_servicio,
         capacidad=capacidad,
         unidad=unidad,
         cantidad=cantidad,
@@ -69,15 +69,11 @@ for row in data:
         categoria=categoria,
         nombre_servicio=nombre_servicio,
         titulo_largo=titulo_largo,
-        descripcion_1=descripcion_1  # Pasamos el texto con <br> a la plantilla
+        descripcion_1=descripcion_1
     )
 
-    # Verifica el contenido HTML generado
-    print(f"Contenido HTML para {codigo}.html:")
-    print(html_content)
-
-    # Guardar el contenido HTML en un archivo en la raíz del proyecto
-    file_path = f"{codigo}.html"
+    # Guardar el contenido HTML en un archivo dentro de la carpeta experiencia-detalle
+    file_path = f"experiencia-detalle/{codigo}.html"
     
     # Comparar contenido si el archivo existe
     if os.path.exists(file_path):
