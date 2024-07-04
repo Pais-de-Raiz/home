@@ -21,14 +21,9 @@ gc = gspread.authorize(creds)
 id_documento = '1LlilYZIDVp4al8WGNr1sdZg-OuQW6jSK5zii6zHAVwU'
 sh = gc.open_by_key(id_documento)
 
-# Tu lógica aquí...
-hoja_de_calculo = gc.open_by_key(id_documento)
-hoja = hoja_de_calculo.sheet1  # Puedes cambiar el nombre de la hoja si es necesario
-
 # Solicitud de acceso a documento
-hoja_de_calculo = gc.open_by_key(id_documento)
 nombre_de_la_pestaña = "servicios-detalle"  # Cambia esto si tu pestaña tiene otro nombre
-pestaña = hoja_de_calculo.worksheet(nombre_de_la_pestaña)
+pestaña = sh.worksheet(nombre_de_la_pestaña)
 
 # Obtener todos los datos de la hoja
 data = pestaña.get_all_records()
@@ -77,7 +72,8 @@ for row in data:
     )
     
     # Guardar el contenido HTML en un archivo dentro de la carpeta experiencia-detalle
-    with open(f"experiencia-detalle/{codigo}.html", "w") as f:
+    file_path = f"experiencia-detalle/{codigo}.html"
+    with open(file_path, "w") as f:
         f.write(html_content)
 
 print("Documentos HTML generados con éxito.")
