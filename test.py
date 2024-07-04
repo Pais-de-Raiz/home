@@ -30,6 +30,9 @@ data = pestaña.get_all_records()
 env = Environment(loader=FileSystemLoader('.'))
 template = env.get_template('template.html')
 
+# Lista para almacenar los nombres de los archivos generados
+archivos_generados = []
+
 # Generar los documentos HTML
 for row in data:
     codigo = row['codigo']
@@ -75,8 +78,13 @@ for row in data:
         if existing_content != html_content:
             with open(file_path, 'w') as f:
                 f.write(html_content)
+            archivos_generados.append(file_path)
     else:
         with open(file_path, 'w') as f:
             f.write(html_content)
+        archivos_generados.append(file_path)
 
 print("Documentos HTML generados con éxito.")
+print("Archivos generados:")
+for archivo in archivos_generados:
+    print(archivo)
