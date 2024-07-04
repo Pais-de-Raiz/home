@@ -30,10 +30,6 @@ data = pestaña.get_all_records()
 env = Environment(loader=FileSystemLoader('.'))
 template = env.get_template('template.html')
 
-# Crear carpeta experiencia-detalle si no existe
-if not os.path.exists('experiencia-detalle'):
-    os.makedirs('experiencia-detalle')
-
 # Generar los documentos HTML
 for row in data:
     codigo = row['codigo']
@@ -69,8 +65,18 @@ for row in data:
         descripcion_1=descripcion_1  # Pasamos el texto con <br> a la plantilla
     )
     
-    # Guardar el contenido HTML en un archivo dentro de la carpeta experiencia-detalle
-    with open(f"{codigo}.html", "w") as f:
-        f.write(html_content)
+    # Guardar el contenido HTML en un archivo en la raíz del proyecto
+    file_path = f"{codigo}.html"
+    
+    # Comparar contenido si el archivo existe
+    if os.path.exists(file_path):
+        with open(file_path, 'r') as f:
+            existing_content = f.read()
+        if existing_content != html_content:
+            with open(file_path, 'w') as f:
+                f.write(html_content)
+    else:
+        with open(file_path, 'w') as f:
+            f.write(html_content)
 
 print("Documentos HTML generados con éxito.")
