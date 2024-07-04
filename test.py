@@ -19,9 +19,6 @@ gc = gspread.authorize(creds)
 
 # Abre tu hoja de cálculo por su ID
 id_documento = '1LlilYZIDVp4al8WGNr1sdZg-OuQW6jSK5zii6zHAVwU'
-sh = gc.open_by_key(id_documento)
-
-# Tu lógica aquí...
 hoja_de_calculo = gc.open_by_key(id_documento)
 nombre_de_la_pestaña = "servicios-detalle"
 pestaña = hoja_de_calculo.worksheet(nombre_de_la_pestaña)
@@ -32,10 +29,6 @@ data = pestaña.get_all_records()
 # Configurar Jinja2
 env = Environment(loader=FileSystemLoader('.'))
 template = env.get_template('template.html')
-
-# Crear carpeta experiencia-detalle si no existe
-if not os.path.exists('experiencia-detalle'):
-    os.makedirs('experiencia-detalle')
 
 # Generar los documentos HTML
 for row in data:
@@ -72,8 +65,8 @@ for row in data:
         descripcion_1=descripcion_1
     )
 
-    # Guardar el contenido HTML en un archivo dentro de la carpeta experiencia-detalle
-    file_path = f"experiencia-detalle/{codigo}.html"
+    # Guardar el contenido HTML en un archivo en la raíz del proyecto
+    file_path = f"{codigo}.html"
     
     # Comparar contenido si el archivo existe
     if os.path.exists(file_path):
