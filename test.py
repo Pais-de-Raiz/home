@@ -31,8 +31,8 @@ env = Environment(loader=FileSystemLoader('.'))
 template = env.get_template('template.html')
 
 # Crear carpeta experiencia-detalle si no existe
-if not os.path.exists('experiencia-detalle'):
-    os.makedirs('experiencia-detalle')
+#if not os.path.exists('experiencia-detalle'):
+#    os.makedirs('experiencia-detalle')
 
 # Lista para almacenar los nombres de los archivos generados
 archivos_generados = []
