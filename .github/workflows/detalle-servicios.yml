@@ -46,11 +46,11 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           # Agrega los archivos generados
-          git add experiencia-detalle/*.html
+          git add *.html
           # Compara los cambios entre los archivos generados y los existentes
           if [ -n "$(git diff --name-only experiencia-detalle/*.html)" ]; then
             git commit -m 'Update HTML files from Google Sheets'
-            git push https://x-access-token:${GH_PAT}@github.com/Pais-de-Raiz/backend.git HEAD:main
+            git push https://x-access-token:${GH_PAT}@github.com/Pais-de-Raiz/home.git HEAD:main
           else
             echo "No changes to commit."
           fi
