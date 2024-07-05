@@ -410,6 +410,9 @@ document.addEventListener("DOMContentLoaded", function() {
     cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-038', 'servicio-exp-v-038');
     cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-039', 'servicio-exp-v-039');
     cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-040', 'servicio-exp-v-040');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-040', 'servicio-exp-v-041');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-040', 'servicio-exp-v-042');
+    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-040', 'servicio-exp-v-043');
     cargarTarjetasFiltradas2(ServiciosBienestar, 'exp-b-001', 'servicio-exp-b-001');
     cargarTarjetasFiltradas2(ServiciosBienestar, 'exp-b-002', 'servicio-exp-b-002');
     cargarTarjetasFiltradas2(ServiciosBienestar, 'exp-b-003', 'servicio-exp-b-003');
