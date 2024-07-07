@@ -369,58 +369,16 @@ function cargarTarjetasFiltradas2(jsonFile, codigo, contenedorId) {
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-001', 'servicio-exp-v-001');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-002', 'servicio-exp-v-002');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-003', 'servicio-exp-v-003');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-004', 'servicio-exp-v-004');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-005', 'servicio-exp-v-005');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-006', 'servicio-exp-v-006');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-007', 'servicio-exp-v-007');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-008', 'servicio-exp-v-008');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-009', 'servicio-exp-v-009');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-010', 'servicio-exp-v-010');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-011', 'servicio-exp-v-011');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-012', 'servicio-exp-v-012');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-013', 'servicio-exp-v-013');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-014', 'servicio-exp-v-014');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-015', 'servicio-exp-v-015');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-016', 'servicio-exp-v-016');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-017', 'servicio-exp-v-017');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-018', 'servicio-exp-v-018');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-019', 'servicio-exp-v-019');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-020', 'servicio-exp-v-020');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-021', 'servicio-exp-v-021');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-022', 'servicio-exp-v-022');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-023', 'servicio-exp-v-023');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-024', 'servicio-exp-v-024');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-025', 'servicio-exp-v-025');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-026', 'servicio-exp-v-026');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-027', 'servicio-exp-v-027');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-028', 'servicio-exp-v-028');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-029', 'servicio-exp-v-029');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-030', 'servicio-exp-v-030');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-031', 'servicio-exp-v-031');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-032', 'servicio-exp-v-032');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-033', 'servicio-exp-v-033');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-034', 'servicio-exp-v-034');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-035', 'servicio-exp-v-035');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-036', 'servicio-exp-v-036');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-037', 'servicio-exp-v-037');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-038', 'servicio-exp-v-038');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-039', 'servicio-exp-v-039');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-040', 'servicio-exp-v-040');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-040', 'servicio-exp-v-041');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-040', 'servicio-exp-v-042');
-    cargarTarjetasFiltradas2(VoluntariadoExperiencial, 'exp-v-040', 'servicio-exp-v-043');
-    cargarTarjetasFiltradas2(ServiciosBienestar, 'exp-b-001', 'servicio-exp-b-001');
-    cargarTarjetasFiltradas2(ServiciosBienestar, 'exp-b-002', 'servicio-exp-b-002');
-    cargarTarjetasFiltradas2(ServiciosBienestar, 'exp-b-003', 'servicio-exp-b-003');
-    cargarTarjetasFiltradas2(GestionComunidades, 'exp-g-001', 'servicio-exp-g-001');
-    cargarTarjetasFiltradas2(GestionComunidades, 'exp-g-002', 'servicio-exp-g-002');
-    cargarTarjetasFiltradas2(GestionComunidades, 'exp-g-003', 'servicio-exp-g-003');
-});
+// Cargar tarjetas dentro del detalle de loser servicios
 
+document.addEventListener("DOMContentLoaded", function() {
+    for (let i = 1; i <= 200; i++) {
+        let index = i.toString().padStart(3, '0');
+        cargarTarjetasFiltradas2(VoluntariadoExperiencial, `exp-v-${index}`, `servicio-exp-v-${index}`);
+        cargarTarjetasFiltradas2(ServiciosBienestar, `exp-b-${index}`, `servicio-exp-b-${index}`);
+        cargarTarjetasFiltradas2(GestionComunidades, `exp-g-${index}`, `servicio-exp-g-${index}`);
+    }
+});
 
 // Cargar tarjetas filtradas por categoría:
 function cargarTarjetasFiltradas4(jsonFile, categoria, contenedorId) {
