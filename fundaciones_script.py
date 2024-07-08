@@ -48,6 +48,7 @@ for row in data:
     img2 = row['img 2']
     img3 = row['img 3']
     img4 = row['img 4']
+    filename = row['filename']
 
     # Renderizar la plantilla con los datos de la fila
     html_content = template.render(
@@ -63,7 +64,7 @@ for row in data:
     )
 
     # Guardar el contenido HTML en un archivo dentro de la carpeta fundaciones
-    file_path = f"fundaciones/{fundacion}.html"
+    file_path = f"fundaciones/{filename}.html"
     
     # Comparar contenido si el archivo existe
     if os.path.exists(file_path):
