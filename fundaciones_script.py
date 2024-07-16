@@ -49,6 +49,7 @@ for row in data:
     img3 = row['img 3']
     img4 = row['img 4']
     filename = row['filename']
+    FundacionCodigo = row['FundacionCodigo']
 
     # Renderizar la plantilla con los datos de la fila
     html_content = template.render(
@@ -60,7 +61,8 @@ for row in data:
         img1=img1,
         img2=img2,
         img3=img3,
-        img4=img4
+        img4=img4,
+        FundacionCodigo=FundacionCodigo
     )
 
     # Guardar el contenido HTML en un archivo dentro de la carpeta fundaciones
