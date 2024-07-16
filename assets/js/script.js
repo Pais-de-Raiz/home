@@ -156,7 +156,7 @@ function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
         .then(response => response.json())
         .then(data => {
             // Filtrar tarjetas con la fundación específica
-            var tarjetasFiltradas = data.filter(item => item.card.fundacion === fundacion);
+            var tarjetasFiltradas = data.filter(item => item.card.FundacionCodigo === FundacionCodigo);
 
             tarjetasFiltradas.forEach(item => {
                 var cardColumn = document.createElement('div');
@@ -213,7 +213,7 @@ function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
 
 // Lista de configuraciones para cargar las tarjetas
 var configuracionesTarjetas = [
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Biblioseo', contenedorId: 'servicios-biblioseo' },
+    { jsonFile: VoluntariadoExperiencial, FundacionCodigo: 'FOO1', contenedorId: 'servicios-FOO1' },
     { jsonFile: VoluntariadoExperiencial, fundacion: 'Debra Colombia', contenedorId: 'servicios-debra' },
     { jsonFile: VoluntariadoExperiencial, fundacion: 'Mujeres de éxito', contenedorId: 'servicios-mujeres' },
     { jsonFile: VoluntariadoExperiencial, fundacion: 'Corporación Centro Holístico', contenedorId: 'servicios-holistico' },
