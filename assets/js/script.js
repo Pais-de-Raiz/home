@@ -147,9 +147,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Función para cargar tarjetas filtradas por fundación desde un archivo JSON a un contenedor específico
-function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
+function cargarTarjetasFiltradas(jsonFile, FundacionCodigo, contenedorId, limite = 300) {
     var tarjetasContainer = document.getElementById(contenedorId);
 
     fetch(jsonFile)
@@ -157,6 +157,9 @@ function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
         .then(data => {
             // Filtrar tarjetas con la fundación específica
             var tarjetasFiltradas = data.filter(item => item.card.FundacionCodigo === FundacionCodigo);
+
+            // Limitar a los primeros 'limite' elementos
+            tarjetasFiltradas = tarjetasFiltradas.slice(0, limite);
 
             tarjetasFiltradas.forEach(item => {
                 var cardColumn = document.createElement('div');
@@ -211,34 +214,32 @@ function cargarTarjetasFiltradas(jsonFile, fundacion, contenedorId) {
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
+// Función para generar códigos de fundación
+function generarCodigosFundacion(codigoBase, cantidad) {
+    let codigos = [];
+    for (let i = 1; i <= cantidad; i++) {
+        let codigo = codigoBase + (i < 10 ? '00' : i < 100 ? '0' : '') + i;
+        codigos.push(codigo);
+    }
+    return codigos;
+}
+
 // Lista de configuraciones para cargar las tarjetas
-var configuracionesTarjetas = [
-    { jsonFile: VoluntariadoExperiencial, FundacionCodigo: 'FOO1', contenedorId: 'servicios-FOO1' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Debra Colombia', contenedorId: 'servicios-debra' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Mujeres de éxito', contenedorId: 'servicios-mujeres' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Corporación Centro Holístico', contenedorId: 'servicios-holistico' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Corporación Entrégate Colombia', contenedorId: 'servicios-entregate' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'CoimpactoB', contenedorId: 'servicios-coimpacto' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Hermanas del Padre Pío', contenedorId: 'servicios-hermanas' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Casa Ronald Mac Donald -Familias', contenedorId: 'servicios-mcdonald' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Quipu Ainy', contenedorId: 'servicios-quipu' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Humanos 3D', contenedorId: 'servicios-humanos' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'San Antonio', contenedorId: 'servicios-fsa' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Techo', contenedorId: 'servicios-techo' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Cartagena al 100%', contenedorId: 'servicios-cartagena' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Trabajando por amor', contenedorId: 'servicios-trabajando' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Samaritanos di Padre Pio', contenedorId: 'servicios-samaritanos' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Tu cultura', contenedorId: 'servicios-cultura' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Fundacion el Quemado', contenedorId: 'servicios-quemado' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Fundacion Bahia y Ecosistemas de Colombia', contenedorId: 'servicios-bahia' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Fundación Apoyar', contenedorId: 'servicios-apoyar' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Fundación alma perruna', contenedorId: 'servicios-perruna' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Fundación Red de Árboles', contenedorId: 'servicios-arboles' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Fundación Pan Para un Abuelo', contenedorId: 'servicios-pan' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Fundación Asilo de Abuelos Fundasab', contenedorId: 'servicios-fundasab' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Club Héroes de Honor', contenedorId: 'servicios-clubheroes' },
-    { jsonFile: VoluntariadoExperiencial, fundacion: 'Aporte al Deporte', contenedorId: 'servicios-aportealdeporte' },
-];
+var configuracionesTarjetas = generarCodigosFundacion('F', 300).map(codigo => ({
+    jsonFile: VoluntariadoExperiencial,
+    FundacionCodigo: codigo,
+    contenedorId: `servicios-${codigo}`
+}));
+
+// Cargar tarjetas para cada configuración
+configuracionesTarjetas.forEach(config => {
+    cargarTarjetasFiltradas(config.jsonFile, config.FundacionCodigo, config.contenedorId);
+});
+
+//////////////////////////////////////////////////////
+
+
+
 
 // Llamada a la función para cargar las tarjetas después de 2 segundos de carga de la página
 setTimeout(function() {
