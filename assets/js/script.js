@@ -321,8 +321,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 
-        
-
 // Cargar tarjetas filtradas por servicio:
 function cargarTarjetasFiltradas2(jsonFile, codigo, contenedorId) {
     var tarjetasContainer2 = document.getElementById(contenedorId);
@@ -344,10 +342,10 @@ function cargarTarjetasFiltradas2(jsonFile, codigo, contenedorId) {
                 cardImg.src = item.card.imgSrc;
                 cardImg.alt = item.card.imgAlt;
                 cardImg.style.borderRadius = '20px 20px 0px 0px';
+                cardImg.style.width = '100%'; // La imagen se adapta al ancho del contenedor
 
                 // Estilo
                 card.style.width = '20rem';
-                card.style.height = '300px';
                 card.style.margin = 'auto';
 
                 var cardBody = document.createElement('div');
@@ -357,7 +355,23 @@ function cargarTarjetasFiltradas2(jsonFile, codigo, contenedorId) {
                 cardTitle.className = 'card-title';
                 cardTitle.innerText = item.card.title;
 
+                // Nuevo subtítulo
+                var cardSubtitle = document.createElement('h6');
+                cardSubtitle.className = 'card-subtitle';
+                cardSubtitle.innerText = 'En alianza con:';
+
+                // Nueva imagen de fundación
+                var cardImgfundation = document.createElement('img');
+                cardImgfundation.className = 'card-img-fundation';
+                cardImgfundation.src = item.card.logo;
+                cardImgfundation.alt = item.card.fundacion;
+                cardImgfundation.style.width = '100%';  // La imagen se adapta al ancho del contenedor
+                cardImgfundation.style.borderRadius = '0px 0px 20px 20px';
+
+                // Agregar subtítulo y la imagen de fundación al cuerpo de la tarjeta
                 cardBody.appendChild(cardTitle);
+                cardBody.appendChild(cardSubtitle);
+                cardBody.appendChild(cardImgfundation);
 
                 card.appendChild(cardImg);
                 card.appendChild(cardBody);
@@ -370,7 +384,9 @@ function cargarTarjetasFiltradas2(jsonFile, codigo, contenedorId) {
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 }
 
-// Cargar tarjetas dentro del detalle de loser servicios
+
+
+// Cargar tarjetas dentro del detalle de los servicios
 
 document.addEventListener("DOMContentLoaded", function() {
     for (let i = 1; i <= 200; i++) {
