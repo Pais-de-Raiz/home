@@ -555,3 +555,52 @@ function limpiarCampos() {
     $('#telefono').val('');
     $('#mensaje').val('');
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // URL del archivo JSON
+    const jsonUrl = 'https://raw.githubusercontent.com/Pais-de-Raiz/backend/main/equipo.json';
+
+    // Fetch para obtener el JSON desde la URL
+    fetch(jsonUrl)
+        .then(response => {
+            // Verifica si la respuesta es exitosa
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            // Convierte la respuesta a JSON
+            return response.json();
+        })
+        .then(data => {
+            // Obtén el contenedor donde se agregarán las tarjetas del equipo
+            const teamContainer = document.getElementById('team-container');
+
+            // Itera sobre cada miembro en los datos JSON
+            data.forEach(member => {
+                const { nombre, cargo, linkedin, foto } = member.person;
+
+                // Genera el HTML de la tarjeta para cada miembro
+                const memberCard = `
+                    <div class="col-6 col-md-4 col-lg-4">
+                        <div class="card-equipo">
+                          <img src="${foto || 'default.jpg'}" class="card-img-top" alt="${nombre}">
+                          <div class="card-body">
+                              <h5 class="card-title" style="margin-bottom: 0px;">${nombre}</h5>
+                              <p class="card-text" style="margin-top: 0px;">${cargo}</p>
+                              <div class="circle-background">
+                                  <a href="${linkedin}" target="_blank">
+                                      <img src="../../img/Linkedin.svg" alt="linkedin-logo">
+                                  </a>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                `;
+
+                // Inserta la tarjeta generada en el contenedor del equipo
+                teamContainer.insertAdjacentHTML('beforeend', memberCard);
+            });
+        })
+        .catch(error => console.error('Error al cargar el equipo:', error));
+});
+
