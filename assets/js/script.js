@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Luego, cargar las otras secciones después de un retraso
     setTimeout(function() {
         cargarContenido("../../assets/partials/banner_comunidades.html", document.getElementById('banner-comunidades'));
-        cargarContenido("../../assets/partials/footer.html", document.getElementById('footer'));
         cargarContenido("../../assets/partials/slider.html", document.getElementById('slider'));
         cargarContenido("../../assets/partials/filosofia.html", document.getElementById('filosofia'));
         cargarContenido("../../assets/partials/do.html", document.getElementById('do'));
@@ -525,52 +524,68 @@ function ocultarTodosLosDivs() {
 
 
 //FORMULARIO 
-function attachEventListeners() {
-    // Adjuntar evento al botón de enviar dentro del formulario cargado dinámicamente
-    $('#footer').find('#enviarBtn').click(function() {
-        var nombre = $('#nombre').val();
-        var correo = $('#correo').val();
-        var telefono = $('#telefono').val();
-        var mensaje = $('#mensaje').val();
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Documento listo');
 
-        if (nombre && correo && telefono && mensaje) {
-            $.ajax({
-                url: 'https://script.google.com/macros/s/AKfycbyv5y9-j_I1c6LNwzLSj21-PTE-maLX-zJ3QOmoSnOscSo2pAWgleVLlONH2dfHOvDmhQ/exec',
-                method: 'POST',
-                data: {
-                    nombre: nombre,
-                    correo: correo,
-                    telefono: telefono,
-                    mensaje: mensaje
-                },
-                success: function(response) {
-                    console.log('¡Formulario enviado exitosamente!');
-                    mostrarModal();
-                    limpiarCampos();
-                },
-                error: function(error) {
-                    console.log('Error al enviar el formulario:', error);
+    // Cargar el contenido del footer en la sección con id="footer"
+    fetch('../../assets/partials/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+            console.log('Footer cargado');
+
+            // Manejador del botón de enviar después de cargar el footer
+            $('#enviarBtn').click(function() {
+                var nombre = $('#nombre').val();
+                var correo = $('#correo').val();
+                var telefono = $('#telefono').val();
+                var mensaje = $('#mensaje').val();
+
+                if (nombre && correo && telefono && mensaje) {
+                    $.ajax({
+                        url: 'https://script.google.com/macros/s/AKfycbyv5y9-j_I1c6LNwzLSj21-PTE-maLX-zJ3QOmoSnOscSo2pAWgleVLlONH2dfHOvDmhQ/exec',
+                        method: 'POST',
+                        data: {
+                            nombre: nombre,
+                            correo: correo,
+                            telefono: telefono,
+                            mensaje: mensaje
+                        },
+                        success: function(response) {
+                            console.log('¡Formulario enviado exitosamente!');
+                            mostrarModal();
+                            limpiarCampos();
+                        },
+                        error: function(error) {
+                            console.log('Error al enviar el formulario:', error);
+                        }
+                    });
+                } else {
+                    console.log('Error: Uno o más campos están vacíos.');
                 }
             });
-        } else {
-            console.log('Error: Uno o más campos están vacíos.');
-        }
-    });
-}
+        })
+        .catch(error => console.error('Error cargando el footer:', error));
 
-function mostrarModal() {
-    $('#successModal').modal('show');
-    setTimeout(function() {
-        $('#successModal').modal('hide');
-    }, 3000); // Cerrar el modal después de 3 segundos
-}
+    function mostrarModal() {
+        var modal = new bootstrap.Modal(document.getElementById('successModal'), {});
+        modal.show();
+        setTimeout(function() {
+            modal.hide();
+        }, 3000); // Cerrar el modal después de 3 segundos
+    }
 
-function limpiarCampos() {
-    $('#nombre').val('');
-    $('#correo').val('');
-    $('#telefono').val('');
-    $('#mensaje').val('');
-}
+    function limpiarCampos() {
+        $('#nombre').val('');
+        $('#correo').val('');
+        $('#telefono').val('');
+        $('#mensaje').val('');
+    }
+});
+
+console.log('Botón de enviar:', $('#enviarBtn').length);
+console.log('Modal de éxito:', $('#successModal').length);
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
