@@ -70,7 +70,7 @@ for row in data:
         categoria=categoria,
         nombre_servicio=nombre_servicio,
         titulo_largo=titulo_largo,
-        descripcion_1=descripcion_1
+        descripcion_1=descripcion_1,
         MetaDescription=MetaDescription
     )
 
