@@ -48,6 +48,7 @@ for row in data:
     url_reserva = row['URL de Reserva']
     categoria = row['categoria']
     descripcion_1 = row['descripcion1']
+    MetaDescription = row['meta_descripcion']
 
     # Convertir los saltos de línea en <br>
     descripcion_1 = descripcion_1.replace('\n', '<br>\n')
@@ -70,6 +71,7 @@ for row in data:
         nombre_servicio=nombre_servicio,
         titulo_largo=titulo_largo,
         descripcion_1=descripcion_1
+        MetaDescription=MetaDescription
     )
 
     # Guardar el contenido HTML en un archivo dentro de la carpeta experiencia-detalle
